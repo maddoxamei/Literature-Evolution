@@ -13,16 +13,13 @@ class Text():
 		 self.__text_url = text_url
 		 self.__text_id, self.__request = self.__find_text()
 
-	def __validation(self, request):
-		return True
-
 	def __find_random_text(self):
 		text_id = random.randint(1, self.__max_text_id)
 		return text_id, requests.get( self.__text_url.format(id = text_id), allow_redirects=False )
 
 	def __find_text(self):
 		text_id, request = self.__find_random_text()
-		while req.status_code != 200 and self.__validation(request):
+		while request.status_code != 200 and self.__validation(request):
 			text_id, request = self.__find_random_text()
 		return text_id, request
 
@@ -40,7 +37,7 @@ class Book(Text):
 
 	def __validation(self, request):
 		soup = BeautifulSoup(requests.get(request.text), "html.parser")
-		loc_class = any('literature' in x.text.lower() for x in soup.find_all('td', property="dcterms:subject"))
+		loc_class = any('literature' in x.text.lower() for x in soup.find_all('tr', property="dcterms:subject"))
 		language = soup.find(property="dcterms:language").find('td').text
 		return language == 'English' and loc_class
 
@@ -51,8 +48,8 @@ class Book(Text):
 
 		# Isolates the book context from the header/footer information 
 		idx_start = max(file.text.find(marker) for marker in TEXT_START_MARKERS)
-		idx_end = [file.text.rfind(marker, start = idx_start) for marker in TEXT_END_MARKERS] 
-		idx_end = min(x for x in idx_end if x > -1)
+		idx_end = [file.text.rfind(marker, idx_start) for marker in TEXT_END_MARKERS] 
+		idx_end = min([x for x in idx_end if x > -1], default = len(file.text))
 
 		return (soup.find(itemprop="headline").text, 
 				soup.find(itemprop="creator").text, 
