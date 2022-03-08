@@ -57,8 +57,8 @@ class Book(Text):
 		self.title, self.author, self.text = self._extract_meta()
 
 	def __clean(self, text_list):
-		return [paragraph.strip( os.linesep ) for paragraph in text_list if paragraph != '']
-		return SparkSession.builder.getOrCreate().parallize( text_list ).map( lambda x: x.strip( os.linesep ) if x != '' else None ).collect()
+		return [paragraph.strip( os.linesep ).strip().replace( os.linesep, ' ') for paragraph in text_list if paragraph != '']
+		return SparkSession.builder.getOrCreate().parallize( text_list ).map( lambda x: x.strip( os.linesep ).strip().replace( os.linesep, ' ') if x != '' else None ).collect()
 
 
 	def _validation(self, request):
