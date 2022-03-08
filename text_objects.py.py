@@ -35,10 +35,10 @@ class Text():
 
 class Book(Text):
 	def __init__(self):
-		super().__init__(_max_book_id, 'https://www.gutenberg.org/cache/epub/{id}/pg{id}.txt')
+		super().__init__(_max_book_id, 'https://www.gutenberg.org/cache/epub/{id}/pg{id}.txt') #https://www.gutenberg.org/files/219/219-0.txt
 
 	def __validation(self, request):
-		soup = BeautifulSoup(request.text, "html.parser")
+		soup = BeautifulSoup(requests.get("https://www.gutenberg.org/ebooks/{}".format(request.url.split('/')[-2])), "html.parser")
 		loc_class = soup.find('table', class_ = 'bibrec').find(property="dcterms:subject")
 		if loc_class is None:
 			return False
