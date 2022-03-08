@@ -35,34 +35,33 @@ class Text():
 
 class Book(Text):
 	def __init__(self):
-		super().__init__(_max_book_id, 'https://www.gutenberg.org/cache/epub/{id}/pg{id}.txt') #https://www.gutenberg.org/files/219/219-0.txt
+		super().__init__(_max_book_id, "https://www.gutenberg.org/ebooks/{id}") #https://www.gutenberg.org/files/219/219-0.txt #'https://www.gutenberg.org/cache/epub/{id}/pg{id}.txt'
+		self.title, self.author, self.text = self.__extract_meta()
 
 	def __validation(self, request):
-		soup = BeautifulSoup(requests.get("https://www.gutenberg.org/ebooks/{}".format(request.url.split('/')[-2])), "html.parser")
-		loc_class = soup.find('table', class_ = 'bibrec').find(property="dcterms:subject")
-		if loc_class is None:
-			return False
+		soup = BeautifulSoup(requests.get(request.text), "html.parser")
+		loc_class = any('literature' in x.text.lower() for x in soup.find_all('td', property="dcterms:subject"))
 		language = soup.find(property="dcterms:language").find('td').text
-		return language == True and 'literature' in loc_class.lower()
+		return language == 'English' and loc_class
 
-	def __populate(self):
-		soup = BeautifulSoup(request.text, "html.parser")
-		table = soup.find('table', class_ = 'bibrec')
-
-
-		lines = .text.splitlines()
+	def __extract_meta(self):
+		soup = BeautifulSoup(self.get_request().text, "html.parser")
+		file_url = 'https://www.gutenberg.org' + soup.find("table", class_ = "files").find_all('a', string = "Plain Text UTF-8")[0].get('href')
+		file = requests.get(file_url)
 
 		# Isolates the book context from the header/footer information 
-		idx_start = max(self.get_request().text.find(marker) for marker in TEXT_START_MARKERS) # request.text.upper().find("START OF THE PROJECT GUTENBERG EBOOK")
-		idx_end = min(self.get_request().text.find(marker) for marker in TEXT_END_MARKERS if request.text.find(marker) > -1) # request.text.upper().find("END OF THE PROJECT GUTENBERG EBOOK")
-		text = self.get_request().text[idx_start:idx_end].splitlines()[1:] # request.text[idx_start:idx_end].split("***", maxsplit = 1)[1]
+		idx_start = max(file.text.find(marker) for marker in TEXT_START_MARKERS)
+		idx_end = [file.text.rfind(marker, start = idx_start) for marker in TEXT_END_MARKERS] 
+		idx_end = min(x for x in idx_end if x > -1)
 
-		#soup.find('table', class_ = 'bibrec')
+		return (soup.find(itemprop="headline").text, 
+				soup.find(itemprop="creator").text, 
+				file.text[idx_start:idx_end].split(_sep + _sep)[1:])
 
 class Fanfiction(Text):
 	def __init__(self):
 		super().__init__(sys.maxsize, 'https://archiveofourown.org/works/{id}?view_full_work=true')
-		self.title, self.author self.text = self.__extract_meta()
+		self.title, self.author, self.text = self.__extract_meta()
 
 	def __validation(self, request):
 		soup = BeautifulSoup(request.text, "html.parser")
