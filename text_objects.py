@@ -1,7 +1,7 @@
 import requests, random, sys, os
 from bs4 import BeautifulSoup
+from pyspark.sql import SparkSession
 
-_sep = str(os.linesep)
 _max_book_id = 67577
 
 code = requests.get("https://raw.githubusercontent.com/c-w/gutenberg/master/gutenberg/_domain_model/text.py").text
@@ -42,6 +42,51 @@ class Text():
 	def _extract_meta(self):
 		self.__text_id, self.__request = self.__find_text()
 
+
+
+class Book(Text):
+	def __init__(self, **kwargs):
+		""" 
+
+		Examples: 
+			Book()
+			Book( text_id = 2701 )
+			Book( min_popular = 10 )
+		"""
+		super().__init__(_max_book_id, "https://www.gutenberg.org/ebooks/{id}", **kwargs) #https://www.gutenberg.org/files/219/219-0.txt #'https://www.gutenberg.org/cache/epub/{id}/pg{id}.txt'
+		self.title, self.author, self.text = self._extract_meta()
+
+	def __clean(self, text_list):
+		return [paragraph.strip( os.linesep ) for paragraph in text_list if paragraph != '']
+		return SparkSession.builder.getOrCreate().parallize( text_list ).map( lambda x: x.strip( os.linesep ) if x != '' else None ).collect()
+
+
+	def _validation(self, request):
+		if request.status_code != 200:
+			return False
+		soup = BeautifulSoup(request.text, "html.parser")
+		loc_class = ['literature' in x.text.lower() for x in soup.find_all('tr', property="dcterms:subject")]
+		language = soup.find(property="dcterms:language").find('td').text
+		popular = self._popular( soup.find(itemprop = "interactionCount").text.split(maxsplit = 1)[0] )
+		return language == 'English' and any(loc_class) and popular
+
+	def _extract_meta(self):
+		super()._extract_meta()
+		soup = BeautifulSoup(self.get_request().text, "html.parser")
+		file_url = 'https://www.gutenberg.org' + soup.find("table", class_ = "files").find_all('a', string = "Plain Text UTF-8")[0].get('href')
+		file = requests.get(file_url)
+
+		# Isolates the book context from the header/footer information 
+		idx_start = max(file.text.find(marker) for marker in TEXT_START_MARKERS)
+		idx_end = [file.text.rfind(marker, idx_start) for marker in TEXT_END_MARKERS] 
+		idx_end = min([x for x in idx_end if x > -1], default = len(file.text))
+
+		return (soup.find(itemprop="headline").text, 
+				soup.find(itemprop="creator").text, 
+				self.__clean( file.text[idx_start:idx_end].split( str(os.linesep)*2 )[1:] ))
+
+
+
 class FanFiction(Text):
 	def __init__(self, **kwargs):
 		""" 
@@ -71,40 +116,3 @@ class FanFiction(Text):
 		text = [chapter.text for chapter in soup.find('div', id = "chapters").find_all('p')] # find_all('div', class_='userstuff'): separates by chapter instead of by paragraph
 		return title, author, text
 
-
-
-class Book(Text):
-	def __init__(self, **kwargs):
-		""" 
-
-		Examples: 
-			Book()
-			Book( text_id = 2701 )
-			Book( min_popular = 10 )
-		"""
-		super().__init__(_max_book_id, "https://www.gutenberg.org/ebooks/{id}", **kwargs) #https://www.gutenberg.org/files/219/219-0.txt #'https://www.gutenberg.org/cache/epub/{id}/pg{id}.txt'
-		self.title, self.author, self.text = self._extract_meta()
-
-	def _validation(self, request):
-		if request.status_code != 200:
-			return False
-		soup = BeautifulSoup(request.text, "html.parser")
-		loc_class = ['literature' in x.text.lower() for x in soup.find_all('tr', property="dcterms:subject")]
-		language = soup.find(property="dcterms:language").find('td').text
-		popular = self._popular( soup.find(itemprop = "interactionCount").text.split(maxsplit = 1)[0] )
-		return language == 'English' and any(loc_class) and popular
-
-	def _extract_meta(self):
-		super()._extract_meta()
-		soup = BeautifulSoup(self.get_request().text, "html.parser")
-		file_url = 'https://www.gutenberg.org' + soup.find("table", class_ = "files").find_all('a', string = "Plain Text UTF-8")[0].get('href')
-		file = requests.get(file_url)
-
-		# Isolates the book context from the header/footer information 
-		idx_start = max(file.text.find(marker) for marker in TEXT_START_MARKERS)
-		idx_end = [file.text.rfind(marker, idx_start) for marker in TEXT_END_MARKERS] 
-		idx_end = min([x for x in idx_end if x > -1], default = len(file.text))
-
-		return (soup.find(itemprop="headline").text, 
-				soup.find(itemprop="creator").text, 
-				file.text[idx_start:idx_end].split(_sep + _sep)[1:])
