@@ -8,19 +8,29 @@ code = requests.get("https://raw.githubusercontent.com/c-w/gutenberg/master/gute
 exec(code)
 
 class Text():
-	def __init__(self, max_text_id, text_url):
+	def __init__(self, max_text_id, text_url, text_id = None, min_popular = 0):
 		 self.__max_text_id = max_text_id
 		 self.__text_url = text_url
-		 self.__text_id, self.__request = self.__find_text()
+		 self.__text_id = text_id
+		 self.__min_popular = min_popular
+
+	def _popular(self, popular_value):
+		return int(popular_value) > self.__min_popular
+
+	def _validation(self, request):
+		raise NotImplementedError
 
 	def __find_random_text(self):
 		text_id = random.randint(1, self.__max_text_id)
 		return text_id, requests.get( self.__text_url.format(id = text_id), allow_redirects=False )
 
 	def __find_text(self):
+		if self.__text_id is not None:
+			return self.__text_id, requests.get( self.__text_url.format(id = self.__text_id) )
 		text_id, request = self.__find_random_text()
-		while request.status_code != 200 and self.__validation(request):
+		while not self._validation(request):
 			text_id, request = self.__find_random_text()
+			print( "Invalid text, finding another:", request.url )
 		return text_id, request
 
 	def get_id(self):
@@ -29,19 +39,63 @@ class Text():
 	def get_request(self):
 		return self.__request
 
+	def _extract_meta(self):
+		self.__text_id, self.__request = self.__find_text()
+
+class FanFiction(Text):
+	def __init__(self, **kwargs):
+		""" 
+
+		Examples: 
+			FanFiction()
+			FanFiction( text_id = 2701 )
+			FanFiction( min_popular = 10 )
+		"""
+		super().__init__(sys.maxsize, 'https://archiveofourown.org/works/{id}?view_full_work=true', **kwargs)
+		self.title, self.author, self.text = self._extract_meta()
+
+	def _validation(self, request):
+		if request.status_code != 200:
+			return False
+		soup = BeautifulSoup(request.text, "html.parser")
+		language = soup.find("dd", class_="language").text.rstrip().lstrip()
+		ratings = [x.text for x in soup.find("dd", class_="rating tags").find_all('a', class_="tag")]
+		popular = self._popular( soup.find('dd', class_="hits").text )
+		return language == 'English' and popular and "Explicit" not in ratings
+
+	def _extract_meta(self):
+		super()._extract_meta()
+		soup = BeautifulSoup(self.get_request().text, "html.parser")
+		title = soup.find("h2", class_="title heading").text.rstrip().lstrip()
+		author = soup.find("h3", class_="byline heading").text.rstrip().lstrip()
+		text = [chapter.text for chapter in soup.find('div', id = "chapters").find_all('p')] # find_all('div', class_='userstuff'): separates by chapter instead of by paragraph
+		return title, author, text
+
+
 
 class Book(Text):
-	def __init__(self):
-		super().__init__(_max_book_id, "https://www.gutenberg.org/ebooks/{id}") #https://www.gutenberg.org/files/219/219-0.txt #'https://www.gutenberg.org/cache/epub/{id}/pg{id}.txt'
-		self.title, self.author, self.text = self.__extract_meta()
+	def __init__(self, **kwargs):
+		""" 
 
-	def __validation(self, request):
-		soup = BeautifulSoup(requests.get(request.text), "html.parser")
-		loc_class = any('literature' in x.text.lower() for x in soup.find_all('tr', property="dcterms:subject"))
+		Examples: 
+			Book()
+			Book( text_id = 2701 )
+			Book( min_popular = 10 )
+		"""
+		super().__init__(_max_book_id, "https://www.gutenberg.org/ebooks/{id}", **kwargs) #https://www.gutenberg.org/files/219/219-0.txt #'https://www.gutenberg.org/cache/epub/{id}/pg{id}.txt'
+		self.title, self.author, self.text = self._extract_meta()
+
+	def _validation(self, request):
+		if request.status_code != 200:
+			return False
+		soup = BeautifulSoup(request.text, "html.parser")
+		loc_class = ['literature' in x.text.lower() for x in soup.find_all('tr', property="dcterms:subject")]
 		language = soup.find(property="dcterms:language").find('td').text
-		return language == 'English' and loc_class
+		popular = self._popular( soup.find(itemprop = "interactionCount").text.split(maxsplit = 1)[0] )
+		return language == 'English' and any(loc_class) and popular
 
-	def __extract_meta(self):
+	def _extract_meta(self):
+		super()._extract_meta()
 		soup = BeautifulSoup(self.get_request().text, "html.parser")
 		file_url = 'https://www.gutenberg.org' + soup.find("table", class_ = "files").find_all('a', string = "Plain Text UTF-8")[0].get('href')
 		file = requests.get(file_url)
@@ -54,21 +108,3 @@ class Book(Text):
 		return (soup.find(itemprop="headline").text, 
 				soup.find(itemprop="creator").text, 
 				file.text[idx_start:idx_end].split(_sep + _sep)[1:])
-
-class Fanfiction(Text):
-	def __init__(self):
-		super().__init__(sys.maxsize, 'https://archiveofourown.org/works/{id}?view_full_work=true')
-		self.title, self.author, self.text = self.__extract_meta()
-
-	def __validation(self, request):
-		soup = BeautifulSoup(request.text, "html.parser")
-		language = soup.find("dd", class_="language").text.rstrip().lstrip()
-		ratings = [x.text for x in soup.find("dd", class_="rating tags").find_all('a', class_="tag")]
-		return "Mature" not in ratings and language == 'English'
-
-	def __extract_meta(self):
-		soup = BeautifulSoup(self.get_request().text, "html.parser")
-		title = soup.find("h2", class_="title heading").text.rstrip().lstrip()
-		author = soup.find("h3", class_="byline heading").text.rstrip().lstrip()
-		text = [chapter.text for chapter in soup.find('div', id = "chapters").find_all('p')] # find_all('div', class_='userstuff'): separates by chapter instead of by paragraph
-		return title, author, text
