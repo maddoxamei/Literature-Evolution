@@ -16,9 +16,16 @@ def _scrape_fanfiction(number_of_texts = 0, fanfiction_ids = [], min_fanfiction_
 def scrape_texts(*args, serialize = True, **kwargs):
 	"""
 
+        Manual Overrides:
+                1) number_of_texts < length of id array: does not randomly generate any texts, DOES collect all specified ids
+                2) length of book id array != length of fanfiction array: Ignores disproportionate lengths and collects all specified ids
+
 	Examples:
-		get_Texts(3) - not recommended as searching for valid fanfiction can take a while
-		get_Texts(3, book_ids = [2701], fanfiction_ids = [37116025, 37601341, 37602172])
+		scrape_texts(number_of_texts = 3): ([Book, Book, Book], [FanFiction, FanFiction, FanFiction])
+		scrape_texts(number_of_texts = 3, book_ids = [2701], fanfiction_ids = [37116025, 37601341, 37602172]): ([Book, Book, Book], [FanFiction, FanFiction, FanFiction])
+		scrape_texts(book_ids = [2701], fanfiction_ids = [37116025, 37601341, 37602172]): ([Book], [FanFiction, FanFiction, FanFiction])
+		scrape_texts(number_of_texts = 1, book_ids = [2701], fanfiction_ids = [37116025, 37601341, 37602172]): ([Book], [FanFiction, FanFiction, FanFiction])
+		scrape_texts(): ([], [])
 	"""
 	books = _scrape_books(*args, **kwargs)
 	fanfics = _scrape_fanfiction(*args, **kwargs)
