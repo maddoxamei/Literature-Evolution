@@ -1,5 +1,6 @@
 import requests, random, sys, os
 from bs4 import BeautifulSoup
+from unidecode import unidecode
 from pyspark.sql import SparkSession
 
 _max_book_id = 67577
@@ -33,8 +34,18 @@ class Text():
 			print( "Invalid text, finding another:", request.url )
 		return text_id, request
 
+	def _clean_text(self, text):
+		return unidecode( text.replace( os.linesep, ' ').strip() )
+
+	def _clean_text_list(self, text_list):
+		return [self._clean_text(paragraph) for paragraph in text_list if paragraph != '']
+		return SparkSession.builder.getOrCreate().parallelize( text_list ).map( lambda paragraph: self._clean_text(paragraph) if paragraph != '' else None ).collect()
+
 	def get_id(self):
 		return self.__text_id
+
+	def get_url(self):
+		return self.__text_url.format(id = self.__text_id)
 
 	def get_request(self):
 		return self.__request
@@ -56,11 +67,6 @@ class Book(Text):
 		super().__init__(_max_book_id, "https://www.gutenberg.org/ebooks/{id}", **kwargs) #https://www.gutenberg.org/files/219/219-0.txt #'https://www.gutenberg.org/cache/epub/{id}/pg{id}.txt'
 		self.title, self.author, self.text = self._extract_meta()
 
-	def __clean(self, text_list):
-		return [paragraph.strip( os.linesep ).strip().replace( os.linesep, ' ') for paragraph in text_list if paragraph != '']
-		return SparkSession.builder.getOrCreate().parallize( text_list ).map( lambda x: x.strip( os.linesep ).strip().replace( os.linesep, ' ') if x != '' else None ).collect()
-
-
 	def _validation(self, request):
 		if request.status_code != 200:
 			return False
@@ -74,17 +80,19 @@ class Book(Text):
 		super()._extract_meta()
 		soup = BeautifulSoup(self.get_request().text, "html.parser")
 		file_url = 'https://www.gutenberg.org' + soup.find("table", class_ = "files").find_all('a', string = "Plain Text UTF-8")[0].get('href')
-		file = requests.get(file_url)
+		file = requests.get(file_url).content.decode('utf-8')
 
 		# Isolates the book context from the header/footer information 
-		idx_start = max(file.text.find(marker) for marker in TEXT_START_MARKERS)
-		idx_end = [file.text.rfind(marker, idx_start) for marker in TEXT_END_MARKERS] 
-		idx_end = min([x for x in idx_end if x > -1], default = len(file.text))
+		idx_start = max(file.find(marker) for marker in TEXT_START_MARKERS)
+		idx_end = [file.rfind(marker, idx_start) for marker in TEXT_END_MARKERS] 
+		idx_end = min([x for x in idx_end if x > -1], default = len(file))
 
+		#text = SparkSession.builder.getOrCreate().parallize( file[idx_start:idx_end] ).map( lambda x: x.split( str(os.linesep)*2 )[1:] ).map( self._clean_text ).collect()
+		text = self._clean_text_list( file[idx_start:idx_end].split( str(os.linesep)*2 )[1:] )
+		
 		return (soup.find(itemprop="headline").text, 
 				soup.find(itemprop="creator").text, 
-				self.__clean( file.text[idx_start:idx_end].split( str(os.linesep)*2 )[1:] ))
-
+				text)
 
 
 class FanFiction(Text):
@@ -110,9 +118,9 @@ class FanFiction(Text):
 
 	def _extract_meta(self):
 		super()._extract_meta()
-		soup = BeautifulSoup(self.get_request().text, "html.parser")
+		soup = BeautifulSoup(self.get_request().content.decode('utf-8'), "html.parser")
 		title = soup.find("h2", class_="title heading").text.rstrip().lstrip()
 		author = soup.find("h3", class_="byline heading").text.rstrip().lstrip()
-		text = [chapter.text for chapter in soup.find('div', id = "chapters").find_all('p')] # find_all('div', class_='userstuff'): separates by chapter instead of by paragraph
+		text = [self._clean_text(chapter.text) for chapter in soup.find('div', id = "chapters").find_all('p')] # find_all('div', class_='userstuff'): separates by chapter instead of by paragraph
 		return title, author, text
 
