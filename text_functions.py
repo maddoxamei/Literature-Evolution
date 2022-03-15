@@ -36,7 +36,18 @@ def scrape_texts(*args, serialize = True, **kwargs):
 	return books, fanfics
 
 def load_texts():
+	"""
+
+	Examples:
+		books, fanfics = load_texts()
+	"""
 	with open('corpus.pkl', 'rb') as file:
 		books = pickle.load(file)
 		fanfics = pickle.load(file)
 	return books, fanfics
+
+def main():
+	scrape_Texts(10)
+
+if __name__ == '__main__':
+	books, fanfics = scrape_Texts(3, book_ids = [2701], fanfiction_ids = [37116025, 37601341, 37602172])
