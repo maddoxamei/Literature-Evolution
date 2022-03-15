@@ -47,7 +47,7 @@ def load_texts():
 	return books, fanfics
 
 def main():
-	scrape_Texts(10)
+	scrape_texts(10, min_fanfiction_popularity = 310000, min_book_popularity = 600)
 
 if __name__ == '__main__':
-	books, fanfics = scrape_Texts(3, book_ids = [2701], fanfiction_ids = [37116025, 37601341, 37602172])
+	books, fanfics = scrape_texts(3, book_ids = [2701], fanfiction_ids = [37116025, 37601341, 37602172])
