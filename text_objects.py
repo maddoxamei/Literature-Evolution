@@ -9,20 +9,34 @@ code = requests.get("https://raw.githubusercontent.com/c-w/gutenberg/master/gute
 exec(code)
 
 class Text():
-	def __init__(self, max_text_id, text_url, text_id = None, min_popular = 0):
+	def __init__(self, max_text_id, text_url, ranks_url, ranks_text_class, text_id = None, min_popular = 0, min_rank = None, **kwargs):
 		 self.__max_text_id = max_text_id
 		 self.__text_url = text_url
+		 self.__ranks_url = ranks_url 
+		 self.__ranks_text_class = ranks_text_class
 		 self.__text_id = text_id
 		 self.__min_popular = min_popular
+		 self.__min_rank = min_rank
 
 	def _popular(self, popular_value):
 		return int(popular_value) > self.__min_popular
+
+	def _rank_pagination(self, rank):
+		raise NotImplementedError
+
+	def _rank_indexation(self, rank):
+		raise NotImplementedError
 
 	def _validation(self, request):
 		raise NotImplementedError
 
 	def __find_random_text(self):
-		text_id = random.randint(1, self.__max_text_id)
+		if self.__min_rank is None:
+			text_id = random.randint(1, self.__max_text_id)
+		else:
+			rank = random.randint(1, self.__min_rank)
+			text_id = BeautifulSoup(requests.get(self.__ranks_url.format(self._rank_pagination(rank))).text, 'html.parser').find_all('li', class_= self.__ranks_text_class)[self._rank_indexation(rank)].find('a').get('href').split('/')[-1]
+			text_id = int(text_id)			
 		return text_id, requests.get( self.__text_url.format(id = text_id), allow_redirects=False )
 
 	def __find_text(self):
@@ -65,8 +79,14 @@ class Book(Text):
 			Book( text_id = 2701 )
 			Book( min_popular = 10 )
 		"""
-		super().__init__(_max_book_id, "https://www.gutenberg.org/ebooks/{id}", **kwargs) #https://www.gutenberg.org/files/219/219-0.txt #'https://www.gutenberg.org/cache/epub/{id}/pg{id}.txt'
+		super().__init__(_max_book_id, "https://www.gutenberg.org/ebooks/{id}", 'https://www.gutenberg.org/ebooks/search/?query=&submit_search=Go!&start_index={}', 'booklink', **kwargs) #https://www.gutenberg.org/files/219/219-0.txt #'https://www.gutenberg.org/cache/epub/{id}/pg{id}.txt'
 		self.title, self.author, self.text = self._extract_meta()
+
+	def _rank_pagination(self, rank):
+		return rank
+
+	def _rank_indexation(self, rank):
+		return 0
 
 	def _validation(self, request):
 		if request.status_code != 200:
@@ -106,8 +126,15 @@ class FanFiction(Text):
 			FanFiction( text_id = 2701 )
 			FanFiction( min_popular = 10 )
 		"""
-		super().__init__(sys.maxsize, 'https://archiveofourown.org/works/{id}?view_full_work=true', **kwargs)
+		super().__init__(sys.maxsize, 'https://archiveofourown.org/works/{id}?view_full_work=true', 'https://archiveofourown.org/works/search?commit=Search&page={}&utf8=%E2%9C%93&work_search%5Bbookmarks_count%5D=&work_search%5Bcharacter_names%5D=&work_search%5Bcomments_count%5D=&work_search%5Bcomplete%5D=T&work_search%5Bcreators%5D=&work_search%5Bcrossover%5D=&work_search%5Bfandom_names%5D=&work_search%5Bfreeform_names%5D=&work_search%5Bhits%5D=&work_search%5Bkudos_count%5D=&work_search%5Blanguage_id%5D=en&work_search%5Bquery%5D=&work_search%5Brating_ids%5D=&work_search%5Brelationship_names%5D=&work_search%5Brevised_at%5D=&work_search%5Bsingle_chapter%5D=0&work_search%5Bsort_column%5D=hits&work_search%5Bsort_direction%5D=desc&work_search%5Btitle%5D=&work_search%5Bword_count%5D=', 'work', **kwargs)
 		self.title, self.author, self.text = self._extract_meta()
+
+	def _rank_pagination(self, rank):
+		return int(rank/20)
+
+	def _rank_indexation(self, rank):
+		return rank % 20
+
 
 	def _validation(self, request):
 		if request.status_code != 200:

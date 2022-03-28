@@ -4,13 +4,13 @@ import pickle
 def _scrape_books(number_of_texts = 0, book_ids = [], min_book_popularity = 0, **kwargs):
 	books = [Book( text_id = idx ) for idx in book_ids]
 	more = max( number_of_texts - len(books), 0 )
-	books.extend(Book( min_popular = min_book_popularity ) for x in range(more))
+	books.extend(Book( min_popular = min_book_popularity, **kwargs ) for x in range(more))
 	return books
 
 def _scrape_fanfiction(number_of_texts = 0, fanfiction_ids = [], min_fanfiction_popularity = 0, **kwargs):
 	fanfics = [FanFiction( text_id = idx ) for idx in fanfiction_ids]
 	more = max( number_of_texts - len(fanfics), 0 )
-	fanfics.extend(FanFiction( min_popular = min_fanfiction_popularity ) for x in range(more))
+	fanfics.extend(FanFiction( min_popular = min_fanfiction_popularity, **kwargs ) for x in range(more))
 	return fanfics
 
 def scrape_texts(*args, serialize = True, **kwargs):
@@ -55,7 +55,7 @@ def load_texts():
 	return books, fanfics
 
 def main():
-	scrape_texts(10, min_fanfiction_popularity = 310000, min_book_popularity = 600)
+	scrape_texts(10, min_rank = 1000)
 
 if __name__ == '__main__':
-	books, fanfics = scrape_texts(3, book_ids = [2701], fanfiction_ids = [37116025, 37601341, 37602172], serialize = False)
+	books, fanfics = scrape_texts(1, serialize = False, min_rank = 1000)
