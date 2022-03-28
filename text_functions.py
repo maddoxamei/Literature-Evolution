@@ -2,15 +2,15 @@ from text_objects import Book, FanFiction
 import pickle
 
 def _scrape_books(number_of_texts = 0, book_ids = [], min_book_popularity = 0, **kwargs):
-	books = [Book( text_id = idx, min_popular = min_book_popularity ) for idx in book_ids]
+	books = [Book( text_id = idx ) for idx in book_ids]
 	more = max( number_of_texts - len(books), 0 )
-	books.extend(Book() for x in range(more))
+	books.extend(Book( min_popular = min_book_popularity ) for x in range(more))
 	return books
 
 def _scrape_fanfiction(number_of_texts = 0, fanfiction_ids = [], min_fanfiction_popularity = 0, **kwargs):
-	fanfics = [FanFiction( text_id = idx, min_popular = min_fanfiction_popularity ) for idx in fanfiction_ids]
+	fanfics = [FanFiction( text_id = idx ) for idx in fanfiction_ids]
 	more = max( number_of_texts - len(fanfics), 0 )
-	fanfics.extend(FanFiction() for x in range(more))
+	fanfics.extend(FanFiction( min_popular = min_fanfiction_popularity ) for x in range(more))
 	return fanfics
 
 def scrape_texts(*args, serialize = True, **kwargs):
@@ -28,7 +28,15 @@ def scrape_texts(*args, serialize = True, **kwargs):
 		scrape_texts(): ([], [])
 	"""
 	books = _scrape_books(*args, **kwargs)
+	if serialize:
+		with open('corpus_books.pkl', 'wb') as file:
+			pickle.dump(books, file)
+
 	fanfics = _scrape_fanfiction(*args, **kwargs)
+	if serialize:
+		with open('corpus_fanfics.pkl', 'wb') as file:
+			pickle.dump(books, file)
+
 	if serialize:
 		with open('corpus.pkl', 'wb') as file:
 			pickle.dump(books, file)
@@ -50,4 +58,4 @@ def main():
 	scrape_texts(10, min_fanfiction_popularity = 310000, min_book_popularity = 600)
 
 if __name__ == '__main__':
-	books, fanfics = scrape_texts(3, book_ids = [2701], fanfiction_ids = [37116025, 37601341, 37602172])
+	books, fanfics = scrape_texts(3, book_ids = [2701], fanfiction_ids = [37116025, 37601341, 37602172], serialize = False)

@@ -32,6 +32,7 @@ class Text():
 		while not self._validation(request):
 			text_id, request = self.__find_random_text()
 			print( "Invalid text, finding another:", request.url )
+		print( "Valid text:", request.url )
 		return text_id, request
 
 	def _clean_text(self, text):
@@ -74,7 +75,8 @@ class Book(Text):
 		loc_class = ['literature' in x.text.lower() for x in soup.find_all('tr', property="dcterms:subject")]
 		language = soup.find(property="dcterms:language").find('td').text
 		popular = self._popular( soup.find(itemprop = "interactionCount").text.split(maxsplit = 1)[0] )
-		return language == 'English' and any(loc_class) and popular
+		is_text = soup.find("table", class_ = "files").find_all('a', string = "Plain Text UTF-8")
+		return is_text and language == 'English' and any(loc_class) and popular
 
 	def _extract_meta(self):
 		super()._extract_meta()
