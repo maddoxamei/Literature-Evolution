@@ -130,7 +130,7 @@ class FanFiction(Text):
 		self.title, self.author, self.text = self._extract_meta()
 
 	def _rank_pagination(self, rank):
-		return int(rank/20)
+		return rank // 20 # int(rank/20)
 
 	def _rank_indexation(self, rank):
 		return rank % 20
