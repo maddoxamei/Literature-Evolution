@@ -35,7 +35,7 @@ def scrape_texts(*args, serialize = True, **kwargs):
 	fanfics = _scrape_fanfiction(*args, **kwargs)
 	if serialize:
 		with open('corpus_fanfics.pkl', 'wb') as file:
-			pickle.dump(books, file)
+			pickle.dump(fanfics, file)
 
 	if serialize:
 		with open('corpus.pkl', 'wb') as file:
