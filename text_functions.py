@@ -40,7 +40,7 @@ def _scrape_books(number_of_texts = 0, book_ids = [], min_book_popularity = 0, *
 	books.extend(Book( min_popular = min_book_popularity, **kwargs ) for x in range(more))
 	return books
 
-def _scrape_fanfiction(number_of_texts = 0, fanfiction_ids = [], min_fanfiction_popularity = 0, **kwargs):
+def _scrape_fanfictions(number_of_texts = 0, fanfiction_ids = [], min_fanfiction_popularity = 0, **kwargs):
 	"""
 	Generate a corpus of "valid" fanfictions from the Archieve of Our Own (AOO) website.
 
@@ -110,7 +110,7 @@ def scrape_texts(*args, serialize = True, **kwargs):
 		with open('corpus_books.pkl', 'wb') as file:
 			pickle.dump(books, file)
 
-	fanfics = _scrape_fanfiction(*args, **kwargs)
+	fanfics = _scrape_fanfictions(*args, **kwargs)
 	if serialize:
 		with open('corpus_fanfics.pkl', 'wb') as file:
 			pickle.dump(fanfics, file)
