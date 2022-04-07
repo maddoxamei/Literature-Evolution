@@ -9,6 +9,25 @@ code = requests.get("https://raw.githubusercontent.com/c-w/gutenberg/master/gute
 exec(code)
 
 class Text():
+	"""
+	kwargs:
+		no kwargs parameters are used in this class, the existance of this parameter merely allows unused parameters to be specified
+	
+	@param max_text_id: the highest index in the online collection to consider when randomly selecting a text. 
+	@type: int
+	@param: text_url: website url to a specific text in the collection, with specification formatted for substitution
+	@type: str
+	@param: ranks_url: website url to the collection of texts sorted in descending order or popularity, with pagination formatted for substitution
+	@type: str
+	@param: ranks_text_class: html class name which indicates a text object on the <ranks_url> webpage; used for extracting all texts
+	@type: str
+	@param: text_id: a unique identification number used to reference a specific text in the collection
+	@type: int [1, <max_text_id>)
+	@param: min_popular: minimum popularity value (based on respective metric) that a text must for inclusion in the corpus
+	@type: int [0, infinity)
+	@param: min_rank: require that a book be in the top <min_rank> books based on the respective popularity metric for inclusion in the corpus
+	@type: int [1, infinity)
+	"""
 	def __init__(self, max_text_id, text_url, ranks_url, ranks_text_class, text_id = None, min_popular = 0, min_rank = None, **kwargs):
 		 self.__max_text_id = max_text_id
 		 self.__text_url = text_url
@@ -19,18 +38,64 @@ class Text():
 		 self.__min_rank = min_rank
 
 	def _popular(self, popular_value):
+		"""
+		Comparison of a considered text's popularity (for respective metric) based on the established minimum requirement for inclusion in the corpus
+
+		@param: considered text's popularity
+		@type: int or numerical-only str
+		@return: whether the considered text meets the popularity requirement
+		@type: bool
+		"""
 		return int(popular_value) > self.__min_popular
 
 	def _rank_pagination(self, rank):
+		"""
+		Calculates which page the <rank>th most popular validation-pending text appears in the <rank_url> collection; calculated page gets substituted into the <rank_url>
+
+		@param: the relative popularity of a randomly selected, validation-pending text
+		@type: int
+		@return: the pagination number which the text appears on
+		@type: int
+		"""
 		raise NotImplementedError
 
 	def _rank_indexation(self, rank):
+		"""
+		Calculates where the <rank>th most popular validation-pending text appears in the list of texts on the <rank_url> webpage; 
+		pagination has already occured to ensure the <rank>th text is in-fact listed on the specific page
+
+		@param: the relative popularity of a randomly selected, validation-pending text
+		@type: int
+		@return: the relative location (index) which the specified text appears in on the webpage
+		@type: int
+		"""
 		raise NotImplementedError
 
 	def _validation(self, request):
+		"""
+		Ensures a selected text, based on randomly generated id or rank, is...
+			actually contained in the online collection (no 404 error),
+			written in English,
+			satisfies the minimum popularity requirement,
+			and satisfies the minimum rank requirement (if specified)
+		Additional validation criteria are specific to the collection from which the text comes from; see child function for specifics.
+
+		Validation does NOT occur for any book whose id is specified for inclusion in the corpus.
+
+		@param: webpage of the text in question
+		@type: requests.Response
+		@return:
+		@type: bool
+		"""
 		raise NotImplementedError
 
 	def __find_random_text(self):
+		"""
+		Selects a text based on randomly generated id or rank (if specified)
+
+		@return:
+		@type: 
+		"""
 		if self.__min_rank is None:
 			text_id = random.randint(1, self.__max_text_id)
 		else:
@@ -40,6 +105,10 @@ class Text():
 		return text_id, requests.get( self.__text_url.format(id = text_id), allow_redirects=False )
 
 	def __find_text(self):
+		"""
+		@return:
+		@type:
+		"""
 		if self.__text_id is not None:
 			return self.__text_id, requests.get( self.__text_url.format(id = self.__text_id) )
 		text_id, request = self.__find_random_text()
@@ -50,22 +119,50 @@ class Text():
 		return text_id, request
 
 	def _clean_text(self, text):
+		"""
+		@param:
+		@type:
+		@return:
+		@type:
+		"""
 		return unidecode( text.replace( os.linesep, ' ').strip() )
 
 	def _clean_text_list(self, text_list):
+		"""
+		@param:
+		@type:
+		@return:
+		@type:
+		"""
 		return [self._clean_text(paragraph) for paragraph in text_list if paragraph != '']
 		return SparkSession.builder.getOrCreate().parallelize( text_list ).map( lambda paragraph: self._clean_text(paragraph) if paragraph != '' else None ).collect()
 
 	def get_id(self):
+		"""
+		@return:
+		@type:
+		"""
 		return self.__text_id
 
 	def get_url(self):
+		"""
+		@return:
+		@type:
+		"""
 		return self.__text_url.format(id = self.__text_id)
 
 	def get_request(self):
+		"""
+		@return:
+		@type:
+		"""
 		return self.__request
 
 	def _extract_meta(self):
+		"""
+		@return:
+		@type:
+		"""
 		self.__text_id, self.__request = self.__find_text()
 
 
@@ -83,12 +180,21 @@ class Book(Text):
 		self.title, self.author, self.text = self._extract_meta()
 
 	def _rank_pagination(self, rank):
+		"""
+		"""
 		return rank
 
 	def _rank_indexation(self, rank):
+		"""
+		"""
 		return 0
 
 	def _validation(self, request):
+		"""
+		Additional validation:
+			is an English text (not audio book)
+			is categorized as Literature
+		"""
 		if request.status_code != 200:
 			return False
 		soup = BeautifulSoup(request.text, "html.parser")
@@ -99,6 +205,8 @@ class Book(Text):
 		return is_text and language == 'English' and any(loc_class) and popular
 
 	def _extract_meta(self):
+		"""
+		"""
 		super()._extract_meta()
 		soup = BeautifulSoup(self.get_request().text, "html.parser")
 		file_url = 'https://www.gutenberg.org' + soup.find("table", class_ = "files").find_all('a', string = "Plain Text UTF-8")[0].get('href')
@@ -130,13 +238,21 @@ class FanFiction(Text):
 		self.title, self.author, self.text = self._extract_meta()
 
 	def _rank_pagination(self, rank):
+		"""
+		"""
 		return rank // 20 # int(rank/20)
 
 	def _rank_indexation(self, rank):
+		"""
+		"""
 		return rank % 20
 
 
 	def _validation(self, request):
+		"""
+		Additional validation:
+			is not rated as Explicit (Mature is allowed)
+		"""
 		if request.status_code != 200:
 			return False
 		soup = BeautifulSoup(request.text, "html.parser")
@@ -146,6 +262,8 @@ class FanFiction(Text):
 		return language == 'English' and popular and "Explicit" not in ratings
 
 	def _extract_meta(self):
+		"""
+		"""
 		super()._extract_meta()
 		soup = BeautifulSoup(self.get_request().content.decode('utf-8'), "html.parser")
 		title = soup.find("h2", class_="title heading").text.rstrip().lstrip()

@@ -23,15 +23,15 @@ def _scrape_books(number_of_texts = 0, book_ids = [], min_book_popularity = 0, *
 		@param max_text_id: the highest index in the Project Gutenberg collection to consider when randomly selecting a book. 
 							Indexation is chronologically based on when the book is added to the collection.
 		@type: int
-		@param min_rank: require that a book be in the top <min_rank> books based on number of downloads in the last 30 days in descending order
-		@type: int
+		@param min_rank: require that a book be in the top <min_rank> books based on number of downloads in the last 30 days in descending order for inclusion in the corpus
+		@type: int [1, infinity)
 
 	@param: number_of_texts: required size of the corpus (units are in Book objects)
 	@type: int
 	@param: book_ids: 
 	@type: list(int)
-	@param: min_book_popularity: minimum number of downloads in the last 30 days that a book must have to be included in the corpus
-	@type: int
+	@param: min_book_popularity: minimum number of downloads in the last 30 days that a book must have for inclusion in the corpus
+	@type: int [0, infinity)
 	@return the books which are to be included in the corpus
 	@type: list(Book)
 	"""
@@ -62,7 +62,7 @@ def _scrape_fanfictions(number_of_texts = 0, fanfiction_ids = [], min_fanfiction
 		@param max_text_id: the highest index in the AOO collection to consider when randomly selecting a fanfiction. 
 							Indexation is not continuous, and therefore takes time to find a valid fanfiction - especially as the default is system max
 		@type: int
-		@param min_rank: require that a fanfiction be in the top <min_rank> fanfictions based on number of hits in descending order.
+		@param min_rank: require that a fanfiction be in the top <min_rank> fanfictions based on number of hits in descending order for inclusion in the corpus.
 							This is the fastest method of semi-random selection.
 		@type: int
 
@@ -70,7 +70,7 @@ def _scrape_fanfictions(number_of_texts = 0, fanfiction_ids = [], min_fanfiction
 	@type: int
 	@param: book_ids: 
 	@type: list(int)
-	@param: min_fanfiction_popularity: minimum number of hits that a fanfiction must have to be included in the corpus.
+	@param: min_fanfiction_popularity: minimum number of hits that a fanfiction must have for inclusion in the corpus.
 										This is an extremely taxing method for random selection. The suggested method is to use min_rank.
 	@type: int
 	@return the fanfictions which are to be included in the corpus
