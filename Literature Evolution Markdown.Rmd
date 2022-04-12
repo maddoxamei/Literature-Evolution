@@ -1,0 +1,54 @@
+---
+title: "Literature Evolution"
+author: "Kyle Rodriguez, Mei Maddox, Thomas FitzGerald"
+date: "4/7/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library("wordcloud")
+library("RColorBrewer")
+library('plotly')
+library('ggplot2')
+library('dplyr')
+library(tidyverse)
+
+dlog <- read.csv('C:/Users/rodri/Desktop/NCFS2/DistComp/proj1/fanfics.csv')
+
+
+POS_word <- read.csv('C:/Users/rodri/Desktop/NCFS2/DistComp/proj1/POS_word.csv')
+
+POS_punct <- read.csv('C:/Users/rodri/Desktop/NCFS2/DistComp/proj1/POS_punctuation.csv')
+```
+
+
+```{r}
+ggplot(data=POS_word,aes(x=POS_word , y=count,fill=lit_type))+
+  geom_bar(stat = 'identity',position = 'dodge')+
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+
+```{r}
+ggplot(data=POS_word,aes(x=POS_word , y=proportion,fill=lit_type))+
+  geom_bar(stat = 'identity',position = 'dodge')+
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+
+```{r}
+ggplot(data=POS_punct,aes(x=POS_punctuation , y=count,fill=lit_type))+
+  geom_bar(stat = 'identity',position = 'dodge')+
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+
+```{r}
+ggplot(data=POS_punct,aes(x=POS_punctuation , y=proportion,fill=lit_type))+
+  geom_bar(stat = 'identity',position = 'dodge')+
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+
+```{r}
+ggplot(data=dlog,aes(x=bookid , y=ave_cl ,fill=lit_type))+
+  geom_bar(stat = 'identity',position = 'dodge')+
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+
