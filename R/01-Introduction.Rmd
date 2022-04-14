@@ -31,9 +31,9 @@ df.pos<-read.csv( './static/POS_all.csv' )
 df.ss_s<-read.csv( './static/SS_simple.csv' )
 # df.ss_c<-read.csv( './static/SS_complex.csv' )
 df.sample_notes<-read.csv( './static/Sample_notes.csv' )
-# dlog <- read.csv( './static/fanfics.csv' )
-# books_words <- read.csv( './static/1.csv' )
-# fanfic_words <- read.csv( './static/2.csv' )
+dlog <- read.csv( './static/fanfics.csv' )
+books_words <- read.csv( './static/1.csv' )
+fanfic_words <- read.csv( './static/2.csv' )
 
 #Duplicates for differences in variable names used
 POS_word <- df.word
