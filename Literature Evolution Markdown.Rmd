@@ -6,49 +6,84 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-library("wordcloud")
-library("RColorBrewer")
-library('plotly')
-library('ggplot2')
-library('dplyr')
+library(wordcloud)
+library(RColorBrewer)
+library(plotly)
+library(ggplot2)
+library(dplyr)
 library(tidyverse)
+library(data.table)
 
 dlog <- read.csv('C:/Users/rodri/Desktop/NCFS2/DistComp/proj1/fanfics.csv')
 
+books_words <- read.csv('C:/Users/rodri/Desktop/NCFS2/DistComp/proj1/1.csv')
+
+fanfic_words <- read.csv('C:/Users/rodri/Desktop/NCFS2/DistComp/proj1/2.csv')
 
 POS_word <- read.csv('C:/Users/rodri/Desktop/NCFS2/DistComp/proj1/POS_word.csv')
 
 POS_punct <- read.csv('C:/Users/rodri/Desktop/NCFS2/DistComp/proj1/POS_punctuation.csv')
+
+SS_simple <- read.csv('C:/Users/rodri/Desktop/NCFS2/DistComp/proj1/SS_simple_summary.csv')
+
 ```
 
 
-```{r}
-ggplot(data=POS_word,aes(x=POS_word , y=count,fill=lit_type))+
+```{r echo = FALSE}
+POS_word_new <- POS_word %>% filter(POS_word == 'JJ'|POS_word == 'IN'|POS_word == 'NN'|POS_word == 'NNP'|POS_word == 'RB'|POS_word == 'VB'|POS_word == 'PRP') %>% mutate(POS_word=recode(POS_word,JJ='adjective',IN = 'preposition',NN= 'noun',NNP= 'proper_noun','RB'= 'adverb', VB = 'verb',PRP='pronoun'))
+```
+
+```{r echo = FALSE}
+ggplot(data=POS_word_new,aes(x=POS_word , y=count,fill=lit_type))+
   geom_bar(stat = 'identity',position = 'dodge')+
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+  theme_minimal()+scale_y_continuous(expand=expansion(mult=c(0,0.1)))+
+  theme(axis.text.x = element_text(angle = 45, hjust=1))
 ```
 
-```{r}
-ggplot(data=POS_word,aes(x=POS_word , y=proportion,fill=lit_type))+
-  geom_bar(stat = 'identity',position = 'dodge')+
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```{r echo = FALSE}
+ggplot(data=POS_word_new,aes(x=POS_word , y=proportion,fill=lit_type))+
+  geom_bar(stat = 'identity',position = 'dodge') +theme_minimal()+scale_y_continuous(expand=expansion(mult=c(0,0.1)))+theme(axis.text.x = element_text(angle = 45, hjust=1))
 ```
 
-```{r}
-ggplot(data=POS_punct,aes(x=POS_punctuation , y=count,fill=lit_type))+
-  geom_bar(stat = 'identity',position = 'dodge')+
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
-```
-
-```{r}
+```{r echo = FALSE}
 ggplot(data=POS_punct,aes(x=POS_punctuation , y=proportion,fill=lit_type))+
   geom_bar(stat = 'identity',position = 'dodge')+
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+  theme_minimal()+ scale_y_continuous(expand=expansion(mult=c(0,0.1)))
+
 ```
 
-```{r}
+
+```{r echo = FALSE}
 ggplot(data=dlog,aes(x=bookid , y=ave_cl ,fill=lit_type))+
   geom_bar(stat = 'identity',position = 'dodge')+
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+  theme_minimal()+scale_y_continuous(expand=expansion(mult=c(0,0.1)))+labs(x='',y='average conversation length')
 ```
+
+```{r echo=FALSE}
+SS_simple_fic <- SS_simple %>% filter(count > 50,lit_type =='Fanfiction')
+SS_simple_book <- SS_simple %>% filter(count > 50,lit_type =='Book')
+```
+
+```{r echo=FALSE,results='asis'}
+library(knitr)
+kable(SS_simple_fic[,2:3])
+```
+
+```{r echo=FALSE,results='asis'}
+library(knitr)
+kable(SS_simple_book[,2:3])
+```
+
+
+
+```{r echo = FALSE}
+books_words[is.na(books_words)]<-0
+wordcloud(words = books_words$X1 , freq = books_words$X2 , min.freq = 200,max.words=200, random.order=F, random.color = T, rot.per=0.35,colors=brewer.pal(8,'Dark2'))
+```
+
+```{r echo = FALSE}
+fanfic_words[is.na(fanfic_words)]<-0
+wordcloud(words = fanfic_words$X_1 , freq = fanfic_words$X_2 , min.freq = 200,max.words=200, random.order=F,random.color = T, rot.per=0.35,colors=brewer.pal(8,'Dark2'))
+```
+
 
