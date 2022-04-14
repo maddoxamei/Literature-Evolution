@@ -1,0 +1,17 @@
+---
+title: "Technical Documentation"
+output: html_document
+date: '2022-04-13'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r  label = project_gutenberg, out.width=50%, fig.cap = "Project Gutenberg was the online collection from which we sourced the classic literature texts"}
+knitr::include_graphics("../static/project_gutenberg.png")
+```
+
+```{r  label = aoo, out.width=50%, fig.cap = "Archive of Our Own was the online collection from which we sourced the modern fanfiction texts"}
+knitr::include_graphics("../static/project_gutenberg.png")
+```
