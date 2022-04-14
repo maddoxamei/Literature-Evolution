@@ -49,9 +49,9 @@ books_words <- books_words %>% na.omit()
 
 par(mfrow = c(1,2))
 
-wordcloud(words = books_words$X1 , freq = books_words$X2 , min.freq = 200,max.words=100, random.order=F, random.color = T, rot.per=0.35,colors=brewer.pal(8,'Dark2'))
+wordcloud(words = books_words$X1 , freq = books_words$X2 , min.freq = 200,max.words=100, random.order=F, random.color = F, rot.per=0.35,colors=brewer.pal(8,'Dark2'))
 
-wordcloud(words = fanfic_words$X_1 , freq = fanfic_words$X_2 , min.freq = 200,max.words=100, random.order=F,random.color = T, rot.per=0.35,colors=brewer.pal(8,'Dark2'))
+wordcloud(words = fanfic_words$X_1 , freq = fanfic_words$X_2 , min.freq = 200,max.words=100, random.order=F, random.color = F, rot.per=0.35,colors=brewer.pal(8,'Dark2'))
 
 par(mfrow=c(1,1))
 ```
@@ -63,9 +63,9 @@ diff.fanfic <- anti_join(fanfic_words, books_words, by = c("X_1" = "X1"))
 
 par(mfrow = c(1,2))
 
-wordcloud(words = diff.book$X1 , freq = diff.book$X2, max.words=100, random.order=F, random.color = T, rot.per=0.35,colors=brewer.pal(8,'Dark2'))
+wordcloud(words = diff.book$X1 , freq = diff.book$X2, max.words=100, random.order=F, random.color = F, rot.per=0.35,colors=brewer.pal(8,'Dark2'))
 
-wordcloud(words = diff.fanfic$X_1 , freq = diff.fanfic$X_2, max.words=100, random.order=F,random.color = T, rot.per=0.35,colors=brewer.pal(8,'Dark2'))
+wordcloud(words = diff.fanfic$X_1 , freq = diff.fanfic$X_2, max.words=100, random.order=F, random.color = F, rot.per=0.35,colors=brewer.pal(8,'Dark2'))
 
 par(mfrow=c(1,1))
 ```
