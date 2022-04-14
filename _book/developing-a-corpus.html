@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Developing A Corpus | Literature Evolution</title>
+  <meta name="description" content="2 Developing A Corpus | Literature Evolution" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Developing A Corpus | Literature Evolution" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="maddoxamei/Literature-Evolution" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Developing A Corpus | Literature Evolution" />
+  
+  
+  
+
+<meta name="author" content="Thomas FitzGerald, Mei Maddox, Kyle Rodriguez" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introduction.html"/>
+<link rel="next" href="corpus-overview.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<link href="libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="libs/selectize-0.12.0/selectize.min.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="developing-a-corpus.html"><a href="developing-a-corpus.html"><i class="fa fa-check"></i><b>2</b> Developing A Corpus</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="developing-a-corpus.html"><a href="developing-a-corpus.html#text-aquisition"><i class="fa fa-check"></i><b>2.1</b> Text Aquisition</a></li>
+<li class="chapter" data-level="2.2" data-path="developing-a-corpus.html"><a href="developing-a-corpus.html#text-selection"><i class="fa fa-check"></i><b>2.2</b> Text Selection</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="corpus-overview.html"><a href="corpus-overview.html"><i class="fa fa-check"></i><b>3</b> Corpus Overview</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="corpus-overview.html"><a href="corpus-overview.html#classic-literature"><i class="fa fa-check"></i><b>3.1</b> Classic Literature</a></li>
+<li class="chapter" data-level="3.2" data-path="corpus-overview.html"><a href="corpus-overview.html#modern-fanfiction"><i class="fa fa-check"></i><b>3.2</b> Modern Fanfiction</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-processing-method.html"><a href="data-processing-method.html"><i class="fa fa-check"></i><b>4</b> Data Processing Method</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="data-processing-method.html"><a href="data-processing-method.html#word-frequency"><i class="fa fa-check"></i><b>4.1</b> Word Frequency</a></li>
+<li class="chapter" data-level="4.2" data-path="data-processing-method.html"><a href="data-processing-method.html#dialogue-and-conversation"><i class="fa fa-check"></i><b>4.2</b> Dialogue and Conversation</a></li>
+<li class="chapter" data-level="4.3" data-path="data-processing-method.html"><a href="data-processing-method.html#parts-of-speech"><i class="fa fa-check"></i><b>4.3</b> Parts of Speech</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="findings.html"><a href="findings.html"><i class="fa fa-check"></i><b>5</b> Findings</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="findings.html"><a href="findings.html#word-frequencies"><i class="fa fa-check"></i><b>5.1</b> Word Frequencies</a></li>
+<li class="chapter" data-level="5.2" data-path="findings.html"><a href="findings.html#punctuation"><i class="fa fa-check"></i><b>5.2</b> Punctuation</a></li>
+<li class="chapter" data-level="5.3" data-path="findings.html"><a href="findings.html#dialogue"><i class="fa fa-check"></i><b>5.3</b> Dialogue</a></li>
+<li class="chapter" data-level="5.4" data-path="findings.html"><a href="findings.html#part-of-speech"><i class="fa fa-check"></i><b>5.4</b> Part of Speech</a></li>
+<li class="chapter" data-level="5.5" data-path="findings.html"><a href="findings.html#sentence-structure"><i class="fa fa-check"></i><b>5.5</b> Sentence Structure</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Literature Evolution</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="developing-a-corpus" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Developing A Corpus</h1>
+<p>For the sake of simplicity, 10 examples of classic literature and 10 examples of modern fan-fiction were included in the corpus of texts on which to conduct our analysis, though infastructure allows for any given amount of each.</p>
+<div id="text-aquisition" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Text Aquisition</h2>
+<p>The classic literature and modern fan-fiction texts were both sourced from online collections: <a href="https://www.gutenberg.org/">Gutenberg Archive</a> and <a href="https://archiveofourown.org/">Archive of Our Own</a>, respectively.</p>
+<p>Project Gutenberg is a collection of published digital works, written and otherwise that are not currently protected by copyright. The collection is aggregated by volunteers in the effort to promote literacy, education, opportunity, and enlightenment.</p>
+<p>Archive of Our Own is a “fan-created, fan-run, nonprofit, noncommercial archive for transformative fanworks.” There is no review board; registered users are allowed to write and upload whatever suits their inclinations.</p>
+<div id="htmlwidget-5bb65b39a5e41163d1fb" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5bb65b39a5e41163d1fb">{"x":{"filter":"none","vertical":false,"caption":"<caption><\/caption>","data":[["Classic Literature","Modern Fan Fiction"],[10,10],["<a  target=_blank href=\"https://www.gutenberg.org/\">Project Gutenberg<\/a>","<a  target=_blank href=\"https://archiveofourown.org/\">Archive of Our Own<\/a>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Count<\/th>\n      <th>Source<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"info":false,"searching":false,"lengthChange":false,"ordering":false,"columnDefs":[{"className":"dt-center","targets":"all"},{"className":"dt-right","targets":1},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p>Content and accompanying meta information (e.g. title) of each work was obtained via web scraping. Web scraping is an automatic technique which collects content on the Internet directly from the source (i.e. from the Project Gutenberg and Archive of Our Own website itself). This was done to ensure that the collection was current (works are constantly added, updated, and altered).</p>
+</div>
+<div id="text-selection" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Text Selection</h2>
+<p>All the classic literature and modern fan-fiction texts in the analyzed corpus were randomly selected, though functionality to have specific works make up any/all of the corpus exist. Although most works in the Project Gutenberg collection are notable, Archive of Our Own hosts content which, for all practical purposes, has never been accessed outside of the author themselves. To ensure moderate popularity, we selected from a smaller subset of the each respective collection: the top 1000 most popular works. This appeared to be the more practical approach than arbitrarily setting a popularity threshold value, though such functionality does exist. A randomly selected work must pass all validation criteria (see Table <a href="developing-a-corpus.html#tab:validationcriteria">2.1</a> and Figures <a href="developing-a-corpus.html#fig:validinvalidPG">2.1</a> - <a href="developing-a-corpus.html#fig:invalidAOO">2.3</a>) for inclusion in the corpus.</p>
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:validationcriteria">Table 2.1: </span>Criteria for Corpus Inclusion
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Items
+</th>
+<th style="text-align:left;">
+Features
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Exists
+</td>
+<td style="text-align:left;width: 30em; ">
+Ensures the randomly generated unique identification number actually references a specific work in the collection
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Language
+</td>
+<td style="text-align:left;width: 30em; ">
+Ensures the work is compiled in English for consistency across analysis metrics
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Popularity
+</td>
+<td style="text-align:left;width: 30em; ">
+Ensures the work is sufficiently popular by exceeding the minimum popularity metric value: downloads in the last 30 days (classic literature) or total hits (fan fiction); defaultly, there is no popularity requirement
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Rank
+</td>
+<td style="text-align:left;width: 30em; ">
+Optional criteria which ensures a work to be in the top n works in the entire collection based on the respective popularity metric in descending order
+</td>
+</tr>
+<tr grouplength="2">
+<td colspan="2" style="border-bottom: 1px solid;">
+<strong>Classic Literature Only</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Written
+</td>
+<td style="text-align:left;width: 30em; ">
+Ensures the work is digitally written as opposed to being an audio book, music sheet, picture(s), etc.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Literature
+</td>
+<td style="text-align:left;width: 30em; ">
+Ensures the work is considered literature under the collection categorization system
+</td>
+</tr>
+<tr grouplength="2">
+<td colspan="2" style="border-bottom: 1px solid;">
+<strong>Modern Fan-fiction Only</strong>
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Explicitness
+</td>
+<td style="text-align:left;width: 30em; ">
+Ensures the fan-fiction is not explicitly rated; mature is acceptable
+</td>
+</tr>
+<tr>
+<td style="text-align:left;padding-left: 2em;" indentlevel="1">
+Completed
+</td>
+<td style="text-align:left;width: 30em; ">
+Ensures the fan-fiction is no longer recieving any updates (i.e. new chapter releases). This ensures that the works are more comparable across the different collections
+</td>
+</tr>
+</tbody>
+</table>
+<div class="figure"><span style="display:block;" id="fig:validinvalidPG"></span>
+<img src="static/valid_invalid_PG.png" alt="Example of (Left) valid, and therefore corpus includable Project Gutenberg work; (Right) invalid, and therefore corpus excluded Project Gutenberg work" width="664" />
+<p class="caption">
+Figure 2.1: Example of (Left) valid, and therefore corpus includable Project Gutenberg work; (Right) invalid, and therefore corpus excluded Project Gutenberg work
+</p>
+</div>
+<div class="figure"><span style="display:block;" id="fig:validAOO"></span>
+<img src="static/valid_AOO.png" alt="Example of a valid, and therefore corpus includable, Archive of Our Own work" width="916" />
+<p class="caption">
+Figure 2.2: Example of a valid, and therefore corpus includable, Archive of Our Own work
+</p>
+</div>
+<div class="figure"><span style="display:block;" id="fig:invalidAOO"></span>
+<img src="static/invalid_AOO.png" alt="Example of an invalid, and therefore corpus excluded, Archive of Our Own work" width="913" />
+<p class="caption">
+Figure 2.3: Example of an invalid, and therefore corpus excluded, Archive of Our Own work
+</p>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introduction.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="corpus-overview.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
