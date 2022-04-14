@@ -1,15 +1,52 @@
----
-title: "Method (data processing)"
-author: "Thomas FitzGerald, Mei Maddox, Kyle Rodriguez"
-date: "4/13/2022"
-output: html_document
----
+# Data Processing Method
+To process our corpus, we used Spark, a distributed computing platform well-suited to handling large amounts of data.  This means that, although our test sample only used 20 works total, our method should scale reasonably well if we were to run hundreds or thousands of works.
 
-#Data Processing Method
-To process our corpus, we used Spark, a distributed computing platform well-suited to handling large amounts of data.  This means that, although our test sample only used 20 stories total, our method should scale reasonably well if we were to run hundreds or thousands of stories.
+Before analysis may commence, the works must formatted for consistent formatting/representation. Project Gutenberg and Archive of Our Own have different methods in which to format the works they distribute. For example, the use of fancy quotes (“/”) as opposed to standard quotes ("). Logically, these representations have comparable meanings; a computer, however interprets them as complete different. This pre-analysis text manipulation is called preprocessing.
 
-Each book or fanfiction in our corpus was broken down into a list of sentences.  We used spark to run natural language processing
-from the nltk package on each sentence, converting that sentence into a list of tokens.  Each token represents a word or punctuation mark, which, through some additional processing, becomes the data we produced.
+Archive of Our Own has a consistent and rigid underlying structure for the layout and distribution of a work, regarldess of its release date. In other words, each work follows a template of how the text body should look. This made identifying the start, stop, and individual paragraphs straightforward.
+
+On the other hand, Project Gutenberg has no such consistency; Disclaimers, meta-information (e.g. Producer), and full licensing details are all included in the text file containing the work and denoted in varying ways depending on the guidlelines in place at the work's release. Therefore, the first preprocessing step for all classic literature texts is the extraction of the work's relevant text.
+
+The remaining preprocessing steps are briefly outlined below. For more detail, reference the technical documentation.
+
+2) Separate the text into paragraphs
+3) Remove mid-paragraph newline characters (Project Gutenberg only)
+4) Strip leading and trailing whitespace
+5) Convert fancy formatting into simple formatting (UTF-8 to ASCII)
+
+Unprocessed excerpt
+
+> \\n\\n“Wake up, Alice dear!” said her sister; “Why, what a long sleep you’ve\\nhad!”     
+>
+> --- _Alice's Adventures in Wonderland by Lewis Carroll_
+
+Processed excerpt
+
+> <mark>\"</mark>Wake up, Alice dear!<mark>"</mark> said her sister; <mark>\"</mark>Why, what a long sleep you<mark>\\\'</mark>ve had!<mark>"</mark>
+
+## Word Frequency
+Each classic or fanfiction in our corpus was broken down into a list of paragraphs. We used spark to further brake down this representation so that each work was a list of words. During this process all words were lowercased and punctuation was stripped.
+
+The data returns as a tuple of RDDs representing the cumulative word frequencies for classics, fanfictions, commonalities between classics and fanfictions, classics words not in fanfiction, and fanfiction words not in classics.
+
+## Dialogue and Conversation
+We define dialogue as single-person communication and assume that continued same-paragraph dialogue is attributed to the same person. By extention, the number of dialogue segments is simply the number of quote-seperated communications in a given sentence. For example, in the following excerpt, there are two dialogue segments.
+
+> “O God!” I screamed, and “O God!” again and again; for there before my eyes—pale and shaken, and half fainting, and groping before him with his hands, like a man restored from death—there stood Henry Jekyll! 
+>
+> --- The Strange Case Of Dr. Jekyll And Mr. Hyde, by Robert Louis Stevenson
+
+A conversation is defined as continuous dialogue-containing paragraphs. For example, the conversation length of the following excerpt is two.
+
+> “Landlord!” said I, “what sort of a chap is he—does he always keep such late hours?” It was now hard upon twelve o’clock.
+>
+>
+> The landlord chuckled again with his lean chuckle, and seemed to be mightily tickled at something beyond my comprehension. “No,” he answered, “generally he’s an early bird—airley to bed and airley to rise—yes, he’s the bird what catches the worm...”
+>
+> --- Moby-Dick; or The Whale, by Herman Melville
+
+## Parts of Speech
+We used spark to run natural language processing from the nltk package on each sentence, converting that sentence into a list of tokens.  Each token represents a word or punctuation mark, which, through some additional processing, becomes the data we produced.
 
 Nltk does a fairly good job of determining parts of speech, using context to guess part of speech for unknown terms.  There are a few cases that return odd results (for example, a non-standard ellipse, like '....', often returns as a noun), but, on average, it's pretty accurate.
 

@@ -32,6 +32,7 @@ table.class <- plot_ly(
 table.class
 
 ```
+
 ## Modern Fanfiction
 ```{r,echo=FALSE} 
 table.ff <- plot_ly(

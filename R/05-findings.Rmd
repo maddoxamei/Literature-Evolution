@@ -1,0 +1,185 @@
+# Findings
+## Word Frequencies
+```{r}
+df.both.words<-df.word %>%
+  group_by(lit_type,title) %>%
+  summarise(word_count = sum(count)) %>%
+  arrange(desc(word_count))
+df.lit.words<-subset(df.word,lit_type=="Book") %>%
+  select(title,POS_word,count) %>%
+  group_by(title) %>%
+  summarise(word_count = sum(count)) %>%
+  arrange(desc(word_count))
+df.ff.words<-subset(df.word,lit_type=="Fanfiction") %>%
+  select(title,POS_word,count) %>%
+  group_by(title) %>%
+  summarise(word_count = sum(count)) %>%
+  arrange(desc(word_count))
+
+# df.both.words$lit_type<-gsub("Book","Classic Literature",df.both.words$lit_type)
+# p<-ggplot(data=df.both.words,aes(x=lit_type,y=word_count,fill=lit_type)) +
+#   geom_bar(stat="identity",position="dodge2") +
+#   theme_minimal()+labs(x='Literature Type',y='Word Count')
+# p <- p + guides(fill=guide_legend(title="Literature Type"))
+# p
+  
+fig.word.count <- plot_ly(x = df.lit.words$word_count, type = "box", quartilemethod="linear", name="Classic Literature") %>%
+  add_trace(x = df.ff.words$word_count, quartilemethod="linear", name="Modern Fanfiction") %>%
+  layout(title = "Word Counts by Literature Type")
+fig.word.count
+```
+In our sample, the longest piece of classic literature is Aurora Leigh, at 89,224 words, while the shortest is the three little pigs, at 1,109, meaning our longest piece is almost 90 times the length of our shortest.
+
+On the fanfiction side, our longest is The Marks we Make, at 270,559 words, while the shortest is That Awkward Moment When Your Whole Class Shows up At Your House, at 28,918, just shy of a tenth the length of our longest.  It does make up for it by having the longest title, however.
+
+Although the extremes of our classic lit. sample are proportionally much more spread out, they're actually distributed much more evenly, as can be seen by the squat inner quartiles in the graph above.
+
+There are certainly examples outside our sample of one group far surpassing the other in either direction: War and Peace is nearly 600,000 words, while the entire genre colloquially known as "CrackFic" is premised around being under 100.
+
+```{r, fig.cap= "Top 100 words for (Left) classic literature; (Right) modern fanfiction", fig.show = 'hold', out.width='50%'}
+# fanfic_words[is.na(fanfic_words)]<-0
+# books_words[is.na(books_words)]<-0
+fanfic_words <- fanfic_words %>% na.omit()
+books_words <- books_words %>% na.omit()
+
+par(mfrow = c(1,2))
+
+wordcloud(words = books_words$X1 , freq = books_words$X2 , min.freq = 200,max.words=100, random.order=F, random.color = T, rot.per=0.35,colors=brewer.pal(8,'Dark2'))
+
+wordcloud(words = fanfic_words$X_1 , freq = fanfic_words$X_2 , min.freq = 200,max.words=100, random.order=F,random.color = T, rot.per=0.35,colors=brewer.pal(8,'Dark2'))
+
+par(mfrow=c(1,1))
+```
+We see here that books use more variety of pronouns the same amount of times. Where as the fan fictions tend to use he and his and him more. 
+
+```{r fig.cap= "Top 100 words which soley exist in (Left) classic literature; (Right) modern fanfiction", fig.show = 'hold', out.width='50%'}
+diff.book <- anti_join(books_words, fanfic_words, by = c("X1" = "X_1"))
+diff.fanfic <- anti_join(fanfic_words, books_words, by = c("X_1" = "X1"))
+
+par(mfrow = c(1,2))
+
+wordcloud(words = diff.book$X1 , freq = diff.book$X2, max.words=100, random.order=F, random.color = T, rot.per=0.35,colors=brewer.pal(8,'Dark2'))
+
+wordcloud(words = diff.fanfic$X_1 , freq = diff.fanfic$X_2, max.words=100, random.order=F,random.color = T, rot.per=0.35,colors=brewer.pal(8,'Dark2'))
+
+par(mfrow=c(1,1))
+```
+
+## Punctuation
+
+```{r, fig.cap="Punctuation frequency"}
+p<-ggplot(data=POS_punct,aes(x=POS_punctuation , y=proportion,fill=lit_type))+
+  geom_bar(stat = 'identity',position = 'dodge')+
+  theme_minimal()+ scale_y_continuous(expand=expansion(mult=c(0,0.1)))+labs(x='part of speech',y='proportion')
+p <- p + guides(fill=guide_legend(title="Literature Type"))
+p
+```
+
+It's worth nothing that the method we used for tokenizing punctuation results in a lot of simplification: colons, semi-colons, and ellipses are all classified as ':'.  Exclamation marks and periods are considered the same.  Despite this, there's still a bit that can be gleaned from this graphic: classic literature has a higher proportion of commas and partial sentence breaks, which might point towards more compound sentences, and the hashtag only appears in our fanfiction sample.
+
+## Dialogue
+
+## Part of Speech
+
+Next, we're going to look at parts of speech (POS).  The natural language processing method we used recognizes ~34 'parts of speech', with most of the 'extra' POS in the package being more specific applications of the main 8 English POS.  For example, 'big','bigger',and 'biggest' are all adjectives, but the package would categorize them as simple, comparative, and superlative adjectives.
+
+We're going to look at what proportion of the text of each story the 6 most common parts of speech make up.  These are singular nouns, pronouns,prepositions,determiners (the, a, that), simple adjectives, and simple adverbs.
+
+```{r, fig.cap="Top 6 Part of Speech Comparison"}
+df.lit.words<- df.word %>% select(title,POS_word,proportion, lit_type)
+
+df.lit.words$title<-gsub("Ã¨","e",gsub("\n","",df.lit.words$title))
+
+df.lit.words.top5 <-subset(df.lit.words,POS_word %in% c('NN','IN','PRP','DT','JJ','RB')) %>%
+  arrange(POS_word,desc(proportion)) %>%
+  mutate(proportion = proportion*100)
+
+plot_ly(df.lit.words.top5, x = ~proportion, y = ~POS_word, color = ~lit_type, type = "box") %>%
+  layout(
+        yaxis = list(title="Part of Speech"),
+        xaxis = list(title="Percentage of Words in Text",range=c(0,25)),
+        legend= list(traceorder='reversed'),
+        yaxis2 = list(
+                range = c(0, 1),
+                overlaying = "y",
+                side = "right"), boxmode = "group",
+                hovermode="x unified") %>%
+  config(
+                displaylogo = FALSE, 
+                modeBarButtons = list(list("toImage", "resetViews"))
+            )
+```
+What really stands out here is, again, that there's a lot of variation in our classical literature that we're not seeing in our fanfiction sample.  However, every part of speech has at least one story from our sample that is a statistical outlier compared to the others.  Also noteworthy is the proportionally smaller number of singular nouns used in fanfiction.
+
+```{r echo = FALSE}
+POS_word_new <- POS_word %>% filter(POS_word == 'JJ'|POS_word == 'IN'|POS_word == 'NN'|POS_word == 'NNP'|POS_word == 'RB'|POS_word == 'VB'|POS_word == 'PRP') %>% mutate(POS_word=recode(POS_word,JJ='adjective',IN = 'preposition',NN= 'noun',NNP= 'proper_noun','RB'= 'adverb', VB = 'verb',PRP='pronoun'))
+```
+
+```{r echo = FALSE}
+p<-ggplot(data=POS_word_new,aes(x=POS_word , y=proportion,fill=lit_type))+
+  geom_bar(stat = 'identity',position = 'dodge') +theme_minimal()+scale_y_continuous(expand=expansion(mult=c(0,0.1)))+theme(axis.text.x = element_text(angle = 45, hjust=1))+labs(x='part of speech',y='proportion')
+p <- p + guides(fill=guide_legend(title="Literature Type"))
+p
+```
+As we discovered the parts of speech in comparison to the overall words, books had more of these major categories. It is interesting to note that books used more nouns and pronouns than fanfictions.
+
+## Sentence Structure
+Another aspect we looked at was the number of unique sentence structures (SS) in each story.  As it turns out, there are MANY ways to put together a sentence in English, so in this case we used an (extra) simplified way of structuring a sentence: nouns (including pronouns), verbs, adjectives, and adverbs only, no punctuation.  Despite this, we still had stories with nearly (but not over) 9,000 unique sentence structures.
+
+```{r echo=FALSE}
+SS_simple_fic <- SS_simple %>% filter(count > 50)
+SS_simple_book <- SS_simple %>% filter(count > 50,lit_type =='Classic Literature ')
+
+SS_simple %>%
+  select(-1) %>%
+  datatable(filter = "top", caption = "Raw sentence structure data", selection = "single", options = list(autoWidth = T, columnDefs = list(list(render = JS(
+    "function(data, type, row, meta) {",
+    "return type === 'display' && data.length > 6 ?",
+    "'<span title=\"' + data + '\">' + data.substr(0, 100) + '...</span>' : data;",
+    "}"), targets = 2:4))))
+```
+There are many types of structures. Honing in on sentences with counts above 50 fan fictions have 23 different sentence structures.
+
+For books we see that there are only 6 different structures used more than 50 times. We also checked to see if we were at just the cusp of where books start to use more structures and we found that not many more structures were used more than 30 times. It is reasonable to assume that books have a higher variety of sentence structures leading to lower counts.  
+
+```{r}
+df.lit.sent<-subset(df.ss_s,lit_type=="Book") %>%
+  select(title,SS_simple,count) %>%
+  group_by(title) %>%
+  summarise(count = sum(count)) %>%
+  arrange(desc(count))
+df.ff.sent<-subset(df.ss_s,lit_type=="Fanfiction") %>%
+  select(title,SS_simple,count) %>%
+  group_by(title) %>%
+  summarise(count = sum(count)) %>%
+  arrange(desc(count))
+
+df.lit.words<-subset(df.word,lit_type=="Book") %>%
+  select(title,POS_word,count) %>%
+  group_by(title) %>%
+  summarise(word_count = sum(count)) %>%
+  arrange(desc(word_count))
+df.ff.words<-subset(df.word,lit_type=="Fanfiction") %>%
+  select(title,POS_word,count) %>%
+  group_by(title) %>%
+  summarise(word_count = sum(count)) %>%
+  arrange(desc(word_count))
+
+df.lit<-cbind(df.lit.words,unique_sentences=df.lit.sent$count[match(df.lit.words$title,df.lit.sent$title)])
+df.ff<-cbind(df.ff.words,unique_sentences=df.ff.sent$count[match(df.ff.words$title,df.ff.sent$title)])
+df.lit$lit_type<-"Classic Literature"
+df.ff$lit_type<-"Fanfiction"
+df.scatter<-rbind(df.lit,df.ff)
+
+p<-ggplot(data=df.scatter, aes(x=word_count, y=unique_sentences,col=lit_type,group=lit_type)) + 
+  geom_point() +
+  geom_smooth(method=lm, aes(color=lit_type))+
+  labs(title="Unique Sentence Structure and Story Length",
+       x="Length (Word Count)", y = "Unique Sentence Structures")+
+  theme_classic()
+p<-p + scale_x_continuous(labels = scales::comma)
+p<-p + scale_y_continuous(labels = scales::comma)
+p <- p + guides(fill=guide_legend(title="Literature Type"))
+p
+```
+Intuitively, a longer story will have more unique SS in it, and this seems to pan out in our data.  However, the relationship between length and unique SS seems to be much stronger in fanfiction than in modern literature: in fact, our longest classic, Aurora Leigh, has a comparatively small number of SS (372), which falls much closer to Three Little Pigs (64) than to the next-longest classic, The Secret Garden (2,226).  It is worth considering that Aurora Leigh is written in verse, which may impact SS variety.
