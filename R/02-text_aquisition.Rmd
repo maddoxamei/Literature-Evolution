@@ -1,0 +1,93 @@
+# Developing A Corpus
+For the sake of simplicity, 10 examples of classic literature and 10 examples of modern fan-fiction were included in the corpus of texts on which to conduct our analysis, though infastructure allows for any given amount of each.
+
+```{r}
+corpus <- data.frame(
+Title = c("Sir Gawayne and the Green Knight", "Oedipus King of Thebes", "The Secret Garden", "The Story of the Three Little Pigs", "The Painted Veil", "The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar", "The Way of the World", "Struwwelpeter: Merry Stories and Funny Pictures", "The Big Trip Up Yonder", "Aurora Leigh"),
+logo = ""
+)
+```
+
+
+## Text Aquisition
+The classic literature and modern fan-fiction texts were both sourced from online collections: Project Gutenberg and Archive of Our Own, respectively. 
+
+Project Gutenberg is a collection of published digital works, written and otherwise that are not currently protected by copyright. The collection is aggregated by volunteers in the effort to promote literacy, education, opportunity, and enlightenment. 
+
+Archive of Our Own is a "fan-created, fan-run, nonprofit, noncommercial archive for transformative fanworks." There is no review board; registered users are allowed to write and upload whatever suits their inclinations.
+
+```{r echo=FALSE}
+library(dplyr)
+data.frame(
+Count = c(10, 10),
+Source = "",
+row.names = c("Classic Literature","Modern Fan Fiction")
+) %>%
+  kableExtra::kbl(booktabs = T, align = "c") %>%
+  kableExtra::kable_paper(full_width = F) %>%
+  kableExtra::row_spec(1:2, bold = T) %>%
+  kableExtra::column_spec(2, image = kableExtra::spec_image( c("../static/project_gutenberg.png","../static/archive_of_our_own.png"), 200, 200))
+```
+
+Content and accompanying meta information (e.g. title) of each work was obtained via web scraping. Web scraping is an automatic technique which collects content on the Internet directly from the source (i.e. from the Project Gutenberg and Archive of Our Own website itself). This was done to ensure that the collection was current (works are constantly added, updated, and altered).
+
+## Text Selection
+All the classic literature and modern fan-fiction texts in the analyzed corpus were randomly selected, though functionality to have specific works make up any/all of the corpus exist. Although most works in the Project Gutenberg collection are notable, Archive of Our Own hosts content which, for all practical purposes, has never been accessed outside of the author themselves. To ensure moderate popularity, we selected from a smaller subset of the each respective collection: the top 1000 most popular works. This appeared to be the more practical approach than arbitrarily setting a popularity threshold value, though such functionality does exist. A randomly selected work must pass all validation criteria (see Table \@ref(tab:validationcriteria) and Figures \@ref(fig:valid_PG) - \@ref(fig:invalid_AOO)) for inclusion in the corpus.
+
+```{r echo=FALSE}
+data.frame(
+Items = c("Exists", "Language", "Popularity", "Rank", "Written", "Literature", "Explicitness", "Completed"),
+Features = c(
+"Ensures the randomly generated unique identification number actually references a specific work in the collection",
+"Ensures the work is compiled in English for consistency across analysis metrics",
+"Ensures the work is sufficiently popular by exceeding the minimum popularity metric value: downloads in the last 30 days (classic literature) or total hits (fan fiction); defaultly, there is no popularity requirement",
+"Optional criteria which ensures a work to be in the top n works in the entire collection based on the respective popularity metric in descending order",
+"Ensures the work is digitally written as opposed to being an audio book, music sheet, picture(s), etc.",
+"Ensures the work is considered literature under the collection categorization system",
+"Ensures the fan-fiction is not explicitly rated; mature is acceptable",
+"Ensures the fan-fiction is no longer recieving any updates (i.e. new chapter releases). This ensures that the works are more comparable across the different collections"
+)
+) %>%
+  kableExtra::kbl(booktabs = T, caption = "Criteria for Corpus Inclusion", label = "validationcriteria") %>%
+  kableExtra::kable_styling(full_width = F) %>%
+  # kableExtra::column_spec(1, bold = T) %>%
+  kableExtra::column_spec(2, width = "30em") %>%
+  kableExtra::pack_rows("Classic Literature Only", 5, 6) %>%
+  kableExtra::pack_rows("Modern Fan-fiction Only", 7, 8)
+```
+
+```{r label = valid_invalid_PG, fig.cap = "Example of (Left) valid, and therefore corpus includable Project Gutenberg work; (Right) invalid, and therefore corpus excluded Project Gutenberg work"}
+knitr::include_graphics("../static/valid_invalid_PG.png")
+```
+
+```{r label = valid_AOO, fig.cap = "Example of a valid, and therefore corpus includable, Archive of Our Own work"}
+knitr::include_graphics("../static/valid_AOO.png")
+```
+
+```{r  label = invalid_AOO, fig.cap = "Example of an invalid, and therefore corpus excluded, Archive of Our Own work"}
+knitr::include_graphics("../static/invalid_AOO.png")
+```
+
+## Text Preprocessing
+Before analysis may commence, the works must formatted for consistent formatting/representation. Project Gutenberg and Archive of Our Own have different methods in which to format the works they distribute. For example, the use of fancy quotes (“/”) as opposed to standard quotes ("). Logically, these representations have comparable meanings; a computer, however interprets them as complete different. This pre-analysis text manipulation is called preprocessing.
+
+Archive of Our Own has a consistent and rigid underlying structure for the layout and distribution of a work, regarldess of its release date. In other words, each work follows a template of how the text body should look. This made identifying the start, stop, and individual paragraphs straightforward.
+
+On the other hand, Project Gutenberg has no such consistency; Disclaimers, meta-information (e.g. Producer), and full licensing details are all included in the text file containing the work and denoted in varying ways depending on the guidlelines in place at the work's release. Therefore, the first preprocessing step for all classic literature texts is the extraction of the work's relevant text.
+
+The remaining preprocessing steps are briefly outlined below. For more detail, reference the technical documentation.
+
+2) Separate the text into paragraphs
+3) Remove mid-paragraph newline characters (Project Gutenberg only)
+4) Strip leading and trailing whitespace
+5) Convert fancy formatting into simple formatting (UTF-8 to ASCII)
+
+Unprocessed excerpt
+
+> \\n\\n“Wake up, Alice dear!” said her sister; “Why, what a long sleep you’ve\\nhad!”     
+>
+> --- _Alice's Adventures in Wonderland by Lewis Carroll_
+
+Processed excerpt
+
+> <mark>\"</mark>Wake up, Alice dear!<mark>"</mark> said her sister; <mark>\"</mark>Why, what a long sleep you<mark>\\\'</mark>ve had!<mark>"</mark>

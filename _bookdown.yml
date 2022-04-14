@@ -1,0 +1,6 @@
+book_filename: "literature-evolution"
+language:
+  ui:
+    chapter_name: ""
+rmd_subdir: ["R"]
+delete_merged_file: true
