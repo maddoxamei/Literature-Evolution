@@ -40,7 +40,7 @@ def dialogue_stats( text ):
 	"""
 	stats = list(map(extract_dialogue, filter(lambda x: '"' in x, text)))
 	if stats == []:
-		return 0.0, 0.0, 0.0
+		return 0.0, 0.0, 0.0, 0.0
 	if len(stats) == 1:
 		return stats[0]
 	info = reduce( lambda x, y: (x[0]+y[0], x[1]+y[1], x[2]+y[2], x[3]+y[3], x[4]+y[4]), stats )
