@@ -1,0 +1,73 @@
+---
+title: "Sample Overview"
+author: "Thomas FitzGerald, Mei Maddox, Kyle Rodriguez"
+date: "4/13/2022"
+output: html_document
+---
+```{r setup, include=FALSE}
+library(dplyr)
+library(ggplot2)
+library(plotly)
+library(reticulate)
+df.word<-read.csv('C:\\File\\Lit_Evo_results\\POS_word.csv')
+df.word.summary<-read.csv('C:\\File\\Lit_Evo_results\\POS_word_summary.csv')
+df.punc<-read.csv('C:\\File\\Lit_Evo_results\\POS_punctuation.csv')
+df.pos<-read.csv('C:\\File\\Lit_Evo_results\\POS_all.csv')
+df.ss_s<-read.csv('C:\\File\\Lit_Evo_results\\SS_simple.csv')
+df.ss_c<-read.csv('C:\\File\\Lit_Evo_results\\SS_complex.csv')
+```
+
+Before we move on, let's take a brief look at what our test sample consists of, to provide context for later analysis.
+```{r,echo=FALSE} 
+dfList<-unique(df.punc %>%select(lit_type,title,author))
+dfList$title<-gsub("Ã¨","e",gsub("\n","",dfList$title))
+
+dfList.class<-subset(dfList,lit_type=="Book")
+dfList.ff<-subset(dfList,lit_type=="Fanfiction")
+
+table.class <- plot_ly(
+  type = 'table',
+  columnwidth = c(2, 1),
+  columnorder = c(0, 1),
+  header = list(
+    values = c("Title","Author"),
+    align = c("left", "left"),
+    line = list(width = 1, color = 'black'),
+    fill = list(color = c("grey", "grey")),
+    font = list(family = "Arial", size = 14, color = "white")
+  ),
+  cells = list(
+    values = rbind(dfList.class$title, dfList.class$author),
+    align = c("left", "left"),
+    line = list(color = "black", width = 1),
+    font = list(family = "Arial", size = 12, color = c("black"))
+  ))
+
+table.ff <- plot_ly(
+  type = 'table',
+  columnwidth = c(2, 1),
+  columnorder = c(0, 1),
+  header = list(
+    values = c("Title","Author"),
+    align = c("left", "left"),
+    line = list(width = 1, color = 'black'),
+    fill = list(color = c("grey", "grey")),
+    font = list(family = "Arial", size = 14, color = "white")
+  ),
+  cells = list(
+    values = rbind(dfList.ff$title, dfList.ff$author),
+    align = c("left", "left"),
+    line = list(color = "black", width = 1),
+    font = list(family = "Arial", size = 12, color = c("black"))
+  ))
+
+table.class
+table.ff
+```
+
+There's a great deal of variation in our classic literature sample that's not immediately apparent from the text.  Three are translations: one from ancient Greek, one from middle English, and one from modern German.  (Oedipus, Sir Gawayne, & Struwwelpeter.)  Three are children's stories(Three little pigs, Secret Garden & Struwwelpeter) two plays(Oedipus and Way of the World), and two poems(Sir Gawayne and Aurora Leigh). The earliest was written in 5th century BC, while the most recent was written in 1953.  
+
+On the fanfiction end, our sample is in some ways much more homogeneous.  Unsurprisingly, since we're lookg at "Modern Fanfiction", all are from the 21st century.  They come from a diverse range of fandoms, although it's worth noting that, with the exception of 'I'd Forgotten People are Kind', a real-person fanfic about a blogger, all fall into either the Sci-Fi or Fantasy genres.  Unlike classic literature, where there's been a greater degree of academic study, genre is difficult to pin down in fanfiction.  One could say that the fanfic inherits the genre of its fandom, but that limits the genre of a story to its setting.
+  Based on a highly subjective reading of story tags, 7 appear to have strong romance elements, with tags like "Soulmate","Courtship", or, helpfully, "Romance."  The other three (That Awkard Moment..., I'd Forgotten People are Kind, "Back From the Future..."), appear to be comedies (Humor), or Hurt/Comfort, a relationship driven genre can be, but is not always, platonic.
+
+Since there subjectively seems to be more variation in our classic literature sample, compared to our sample fanfiction, let's look at a few structural differences and see if this potential difference is reflected there.
