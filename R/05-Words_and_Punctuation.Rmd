@@ -16,12 +16,12 @@ df.ff.words<-subset(df.word,lit_type=="Fanfiction") %>%
   summarise(word_count = sum(count)) %>%
   arrange(desc(word_count))
 
-df.both.words$lit_type<-gsub("Book","Classic Literature",df.both.words$lit_type)
-p<-ggplot(data=df.both.words,aes(x=lit_type,y=word_count,fill=lit_type)) +
-  geom_bar(stat="identity",position="dodge2") +
-  theme_minimal()+labs(x='Literature Type',y='Word Count')
-p <- p + guides(fill=guide_legend(title="Literature Type"))
-p
+# df.both.words$lit_type<-gsub("Book","Classic Literature",df.both.words$lit_type)
+# p<-ggplot(data=df.both.words,aes(x=lit_type,y=word_count,fill=lit_type)) +
+#   geom_bar(stat="identity",position="dodge2") +
+#   theme_minimal()+labs(x='Literature Type',y='Word Count')
+# p <- p + guides(fill=guide_legend(title="Literature Type"))
+# p
   
 fig.word.count <- plot_ly(x = df.lit.words$word_count, type = "box", quartilemethod="linear", name="Classic Literature") %>%
   add_trace(x = df.ff.words$word_count, quartilemethod="linear", name="Modern Fanfiction") %>%
@@ -35,6 +35,40 @@ On the fanfiction side, our longest is The Marks we Make, at 270,559 words, whil
 Although the extremes of our classic lit. sample are proportionally much more spread out, they're actually distributed much more evenly, as can be seen by the squat inner quartiles in the graph above.
 
 There are certainly examples outside our sample of one group far surpassing the other in either direction: War and Peace is nearly 600,000 words, while the entire genre colloquially known as "CrackFic" is premised around being under 100.
+
+```{r}
+books_words <- books_words %>% arrange(desc(X2))
+fanfic_words <- fanfic_words %>% arrange(desc(X_2))
+
+#Gets a list of words that appear only in books or only in fanfiction
+book.temp<-books_words %>% mutate(book_prop=X2/sum(books_words$X2,na.rm=TRUE))
+fanfic.temp<-fanfic_words %>% mutate(fanfic_prop=X_2/sum(fanfic_words$X_2,na.rm=TRUE))
+
+book.shared<-subset(book.temp,X1 %in% fanfic_words$X_1)
+fanfic.shared<-subset(fanfic.temp,X_1 %in% books_words$X1)
+
+
+book.shared$fanfic_prop <- fanfic.shared$fanfic_prop[match(book.shared$X1,fanfic.shared$X_1)]
+lit.shared<-book.shared
+
+#Higher dif = More Popular in Books
+lit.shared$dif<-lit.shared$book_prop-lit.shared$fanfic_prop
+lit.shared<-lit.shared %>% arrange(desc(dif))
+shared.length<-length(lit.shared$X1)
+
+book.popular<-lit.shared$X1[1:10]
+fanfic.popular<-lit.shared$X1[(shared.length-9):shared.length-1]
+
+cbind(book.popular,fanfic.popular)
+
+#Unique Words to each group
+# `%!in%` <- Negate(`%in%`)
+# subset(book.temp,X1 %!in% fanfic_words$X_1)
+# subset(fanfic.temp,X_1 %!in% books_words$X1)
+
+
+```
+
 
 ## Punctuation
 
