@@ -9,7 +9,7 @@ Another aspect we looked at was the number of unique sentence structures (SS) in
 
 ```{r echo=FALSE}
 SS_simple_fic <- SS_simple %>% filter(count > 50,lit_type =='Fanfiction')
-SS_simple_book <- SS_simple %>% filter(count > 50,lit_type =='Classic Literature')
+SS_simple_book <- SS_simple %>% filter(count > 50,lit_type =='Classic Literature ')
 ```
 
 ```{r echo=FALSE,results='asis'}
@@ -56,11 +56,15 @@ df.lit$lit_type<-"Classic Literature"
 df.ff$lit_type<-"Fanfiction"
 df.scatter<-rbind(df.lit,df.ff)
 
-ggplot(data=df.scatter, aes(x=word_count, y=unique_sentences,col=lit_type,group=lit_type)) + 
+p<-ggplot(data=df.scatter, aes(x=word_count, y=unique_sentences,col=lit_type,group=lit_type)) + 
   geom_point() +
   geom_smooth(method=lm, aes(color=lit_type))+
   labs(title="Unique Sentence Structure and Story Length",
        x="Length (Word Count)", y = "Unique Sentence Structures")+
-  theme_classic() 
+  theme_classic()
+p<-p + scale_x_continuous(labels = scales::comma)
+p<-p + scale_y_continuous(labels = scales::comma)
+p <- p + guides(fill=guide_legend(title="Literature Type"))
+p
 ```
-Intuitively, a longer story will have more unique SS in it, and this seems to pan out in our data.  However, the relationship between length and unique SS seems to be much stronger in fanfiction than in modern literature: in fact, our longest classic, Aurora Leigh, has a comparatively small number of SS (372), which falls much closer to Three Little Pigs (64) than to the next-longest classic, The Secret Garden (2,226).  It is worth considering that Aurora Leigh is written in verse, which may impact SS options.
+Intuitively, a longer story will have more unique SS in it, and this seems to pan out in our data.  However, the relationship between length and unique SS seems to be much stronger in fanfiction than in modern literature: in fact, our longest classic, Aurora Leigh, has a comparatively small number of SS (372), which falls much closer to Three Little Pigs (64) than to the next-longest classic, The Secret Garden (2,226).  It is worth considering that Aurora Leigh is written in verse, which may impact SS variety.
