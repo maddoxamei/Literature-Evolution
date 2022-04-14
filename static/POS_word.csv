@@ -1,0 +1,1327 @@
+,lit_type,author,title,POS_word,count,proportion
+0,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",NNS,1097,0.024686635011364404
+1,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",RBR,53,0.001192699777212683
+2,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",TO,848,0.01908319643540293
+3,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",WRB,120,0.0027004523257645654
+4,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",RB,1629,0.03665864032225398
+5,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",RBS,22,0.0004950829263901704
+6,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",CD,1359,0.030582622589283705
+7,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",VBP,819,0.01843058712334316
+8,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",PRP$,922,0.020748475369624413
+9,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",NN,9887,0.22249476787361883
+10,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",POS,73,0.0016427751648401107
+11,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",PRP,1958,0.04406238044872516
+12,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",EX,45,0.001012669622161712
+13,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",WP,76,0.0017102864729842248
+14,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",WDT,205,0.004613272723181133
+15,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",CC,1954,0.043972365371199675
+16,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",VBZ,1450,0.032630465602988504
+17,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",VB,1515,0.03409321061277764
+18,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",JJR,78,0.0017552940117469677
+19,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",RP,69,0.0015527600873146252
+20,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",JJ,3814,0.08582937642055044
+21,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",VBN,587,0.013209712626865
+22,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",MD,253,0.005693453653486959
+23,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",JJS,138,0.0031055201746292504
+24,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",IN,4121,0.09273803362063146
+25,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",WP$,3,6.751130814411415e-05
+26,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",FW,79,0.001777797781128339
+27,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",VBG,129,0.002902986250196908
+28,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",NNPS,3,6.751130814411415e-05
+29,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",UH,2,4.500753876274276e-05
+30,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",DT,3605,0.08112608861984383
+31,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",VBD,1485,0.033418097531336496
+32,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",NNP,5978,0.13452753336183812
+33,Book,"Morris, Richard, 1833-1894","
+Sir Gawayne and the Green KnightAn Alliterative Romance-Poem (c. 1360 A.D.)
+",PDT,61,0.0013727299322636541
+0,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",NNS,524,0.02781316348195329
+1,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",RBR,52,0.002760084925690021
+2,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",TO,383,0.02032908704883227
+3,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",WRB,125,0.006634819532908705
+4,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",RB,966,0.051273885350318474
+5,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",RBS,6,0.0003184713375796178
+6,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",CD,193,0.01024416135881104
+7,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",VBP,478,0.02537154989384289
+8,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",PRP$,445,0.02361995753715499
+9,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",NN,3334,0.17696390658174097
+10,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",POS,142,0.007537154989384289
+11,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",PRP,1171,0.06215498938428875
+12,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",EX,46,0.0024416135881104033
+13,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",WP,223,0.01183651804670913
+14,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",WDT,98,0.005201698513800424
+15,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",CC,835,0.044320594479830146
+16,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",VBZ,522,0.027707006369426752
+17,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",VB,841,0.044639065817409763
+18,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",RP,39,0.002070063694267516
+19,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",JJR,52,0.002760084925690021
+20,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",JJ,1352,0.07176220806794055
+21,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",VBN,324,0.017197452229299363
+22,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",MD,278,0.01475583864118896
+23,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",JJS,57,0.0030254777070063696
+24,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",IN,1896,0.10063694267515924
+25,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",WP$,16,0.0008492569002123143
+26,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",FW,5,0.0002653927813163482
+27,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",VBG,152,0.008067940552016985
+28,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",NNPS,1,5.307855626326964e-05
+29,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",UH,35,0.0018577494692144374
+30,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",DT,1481,0.07860934182590233
+31,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",VBD,620,0.032908704883227176
+32,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",NNP,2108,0.1118895966029724
+33,Book,"Sophocles, 495? BCE-406 BCE","
+Oedipus King of ThebesTranslated into English Rhyming Verse with Explanatory Notes
+",PDT,40,0.0021231422505307855
+0,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",NNS,2725,0.03251867586338576
+1,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",RBR,101,0.0012052793622759493
+2,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",WRB,774,0.0092364972911048
+3,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",TO,2010,0.023986252655194634
+4,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",RB,5703,0.06805651686197761
+5,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",RBS,23,0.00027446955774600824
+6,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",CD,509,0.0060741306475094875
+7,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",VBP,1565,0.018675863385760997
+8,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",PRP$,1876,0.022387169144848326
+9,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",NN,9725,0.11605288909043175
+10,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",POS,918,0.01095491539177546
+11,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",PRP,9850,0.11754457146948614
+12,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",EX,368,0.004391512923936132
+13,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",WP,446,0.005322322728466073
+14,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",WDT,233,0.002780495954557388
+15,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",VBZ,1509,0.01800758967994463
+16,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",CC,3946,0.04708942934198907
+17,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",VB,3905,0.046600157521659226
+18,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",RP,640,0.007637413780758491
+19,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",JJR,198,0.0023628248884221582
+20,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",JJ,5136,0.061290245590586885
+21,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",VBN,1917,0.022876440965178168
+22,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",MD,1496,0.01785245471252297
+23,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",JJS,118,0.0014081481658273468
+24,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",IN,8471,0.10108833146375809
+25,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",WP$,13,0.00015513496742165683
+26,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",FW,11,0.00013126804935678657
+27,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",VBG,1435,0.01712451371154443
+28,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",NNPS,5,5.966729516217571e-05
+29,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",UH,85,0.001014344017756987
+30,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",DT,6511,0.0776987517601852
+31,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",VBD,7828,0.0934151173059023
+32,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",NNP,3658,0.04365259314064775
+33,Book,"Burnett, Frances Hodgson, 1849-1924","
+The Secret Garden
+",PDT,90,0.0010740113129191627
+0,Book,"Brooke, L. Leslie (Leonard Leslie), 1862-1940","
+The Story of the Three Little Pigs
+",NNS,10,0.009017132551848512
+1,Book,"Brooke, L. Leslie (Leonard Leslie), 1862-1940","
+The Story of the Three Little Pigs
+",TO,21,0.018935978358881875
+2,Book,"Brooke, L. Leslie (Leonard Leslie), 1862-1940","
+The Story of the Three Little Pigs
+",WRB,11,0.009918845807033363
+3,Book,"Brooke, L. Leslie (Leonard Leslie), 1862-1940","
+The Story of the Three Little Pigs
+",RB,52,0.046889089269612265
+4,Book,"Brooke, L. Leslie (Leonard Leslie), 1862-1940","
+The Story of the Three Little Pigs
+",CD,9,0.008115419296663661
+5,Book,"Brooke, L. Leslie (Leonard Leslie), 1862-1940","
+The Story of the Three Little Pigs
+",PRP$,12,0.010820559062218215
+6,Book,"Brooke, L. Leslie (Leonard Leslie), 1862-1940","
+The Story of the Three Little Pigs
+",VBP,7,0.0063119927862939585
+7,Book,"Brooke, L. Leslie (Leonard Leslie), 1862-1940","
+The Story of the Three Little Pigs
+",NN,123,0.1109107303877367
+8,Book,"Brooke, L. Leslie (Leonard Leslie), 1862-1940","
+The Story of the Three Little Pigs
+",POS,2,0.0018034265103697023
+9,Book,"Brooke, L. Leslie (Leonard Leslie), 1862-1940","
+The Story of the Three Little Pigs
+",EX,4,0.0036068530207394047
+10,Book,"Brooke, L. Leslie (Leonard Leslie), 1862-1940","
+The Story of the Three Little Pigs
+",PRP,107,0.09648331830477908
+11,Book,"Brooke, L. Leslie (Leonard Leslie), 1862-1940","
+The Story of the Three Little Pigs
+",WP,5,0.004508566275924256
+12,Book,"Brooke, L. Leslie (Leonard Leslie), 1862-1940","
+The Story of the Three Little Pigs
+",WDT,8,0.007213706041478809
+13,Book,"Brooke, L. Leslie (Leonard Leslie), 1862-1940","
+The Story of the Three Little Pigs
+",VBZ,7,0.0063119927862939585
+14,Book,"Brooke, L. Leslie (Leonard Leslie), 1862-1940","
+The Story of the Three Little Pigs
+",CC,73,0.06582506762849413
+15,Book,"Brooke, L. Leslie (Leonard Leslie), 1862-1940","
+The Story of the Three Little Pigs
+",VB,57,0.05139765554553652
+16,Book,"Brooke, L. Leslie (Leonard Leslie), 1862-1940","
+The Story of the Three Little Pigs
+",RP,18,0.016230838593327322
+17,Book,"Brooke, L. Leslie (Leonard Leslie), 1862-1940","
+The Story of the Three Little Pigs
+",JJ,93,0.08385933273219116
+18,Book,"Brooke, L. Leslie (Leonard Leslie), 1862-1940","
+The Story of the Three Little Pigs
+",VBN,5,0.004508566275924256
+19,Book,"Brooke, L. Leslie (Leonard Leslie), 1862-1940","
+The Story of the Three Little Pigs
+",MD,26,0.023444544634806132
+20,Book,"Brooke, L. Leslie (Leonard Leslie), 1862-1940","
+The Story of the Three Little Pigs
+",IN,96,0.08656447249774572
+21,Book,"Brooke, L. Leslie (Leonard Leslie), 1862-1940","
+The Story of the Three Little Pigs
+",VBG,7,0.0063119927862939585
+22,Book,"Brooke, L. Leslie (Leonard Leslie), 1862-1940","
+The Story of the Three Little Pigs
+",UH,8,0.007213706041478809
+23,Book,"Brooke, L. Leslie (Leonard Leslie), 1862-1940","
+The Story of the Three Little Pigs
+",DT,111,0.10009017132551848
+24,Book,"Brooke, L. Leslie (Leonard Leslie), 1862-1940","
+The Story of the Three Little Pigs
+",VBD,111,0.10009017132551848
+25,Book,"Brooke, L. Leslie (Leonard Leslie), 1862-1940","
+The Story of the Three Little Pigs
+",NNP,125,0.1127141568981064
+26,Book,"Brooke, L. Leslie (Leonard Leslie), 1862-1940","
+The Story of the Three Little Pigs
+",PDT,1,0.0009017132551848512
+0,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",NNS,1957,0.026403130059363195
+1,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",RBR,115,0.001551538046411225
+2,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",WRB,563,0.007595790609821911
+3,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",TO,2217,0.02991095520777118
+4,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",RB,5051,0.06814624932541824
+5,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",RBS,21,0.00028332433890987586
+6,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",CD,345,0.004654614139233675
+7,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",VBP,1578,0.021289800323799245
+8,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",PRP$,2472,0.03335132218024824
+9,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",NN,8924,0.12039935240151106
+10,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",POS,236,0.0031840259039395574
+11,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",PRP,9808,0.13232595790609822
+12,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",EX,196,0.0026443604964921747
+13,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",WP,414,0.00558553696708041
+14,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",WDT,387,0.005221262817053427
+15,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",VBZ,920,0.0124123043712898
+16,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",CC,2899,0.039112250404749055
+17,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",VB,3602,0.048596869940636805
+18,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",RP,297,0.004007015650296816
+19,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",JJR,136,0.001834862385321101
+20,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",VBN,1802,0.02431192660550459
+21,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",JJ,4398,0.05933621154883972
+22,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",MD,1428,0.01926605504587156
+23,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",JJS,101,0.001362655153804641
+24,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",IN,7947,0.10721802482460874
+25,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",WP$,10,0.00013491635186184566
+26,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",FW,6,8.09498111171074e-05
+27,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",VBG,1012,0.01365353480841878
+28,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",NNPS,18,0.00024284943335132217
+29,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",UH,135,0.0018213707501349163
+30,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",DT,6106,0.08237992444684296
+31,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",VBD,6756,0.09114948731786293
+32,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",NNP,2173,0.029317323259579062
+33,Book,"Maugham, W. Somerset (William Somerset), 1874-1965","
+The Painted Veil
+",PDT,90,0.0012142471667566108
+0,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",NNS,1955,0.0358616894432725
+1,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",RBR,68,0.0012473631110703476
+2,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",TO,1311,0.02404842703842979
+3,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",WRB,293,0.0053746675227001744
+4,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",RBS,38,0.0006970558561863707
+5,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",RB,2746,0.05037145739704668
+6,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",CD,566,0.010382463542144364
+7,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",VBP,927,0.017004494175914885
+8,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",PRP$,1405,0.02577272310373292
+9,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",NN,8350,0.15316885260937357
+10,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",POS,140,0.002568100522791892
+11,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",PRP,4748,0.08709529487297074
+12,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",EX,124,0.0022746033201871043
+13,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",WP,396,0.007264055764468495
+14,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",WDT,357,0.006548656333119325
+15,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",CC,2056,0.03771439053471522
+16,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",VBZ,750,0.013757681372099421
+17,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",VB,2034,0.037310831881133634
+18,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",RP,123,0.0022562597450243053
+19,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",JJR,74,0.001357424562047143
+20,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",JJ,3127,0.05736035953407319
+21,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",VBN,1500,0.027515362744198843
+22,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",MD,779,0.0142896450518206
+23,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",JJS,67,0.0012290195359075484
+24,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",IN,6102,0.1119324956434009
+25,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",WP$,20,0.0003668715032559846
+26,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",FW,77,0.0014124552875355407
+27,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",VBG,659,0.012088416032284692
+28,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",NNPS,3,5.503072548839769e-05
+29,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",UH,186,0.003411904980280657
+30,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",DT,6615,0.1213427497019169
+31,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",VBD,4181,0.07669448775566358
+32,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",NNP,2665,0.048885627808859945
+33,Book,"Leblanc, Maurice, 1864-1941","
+The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar
+",PDT,73,0.0013390809868843439
+0,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",NNS,703,0.023796628528874146
+1,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",RBR,58,0.0019633064789113803
+2,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",TO,776,0.026267686683366057
+3,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",WRB,185,0.0062622706654931965
+4,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",RB,1534,0.051926071356035476
+5,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",RBS,14,0.0004739015638751608
+6,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",CD,171,0.005788369101618035
+7,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",VBP,1160,0.03926612957822761
+8,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",PRP$,1075,0.036388870083271276
+9,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",NN,4248,0.14379527452440594
+10,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",POS,206,0.006973123011305937
+11,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",EX,64,0.002166407149143592
+12,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",PRP,3083,0.10435989438765148
+13,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",WP,208,0.007040823234716675
+14,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",WDT,137,0.004637465303635502
+15,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",CC,1080,0.03655812064179812
+16,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",VBZ,776,0.026267686683366057
+17,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",VB,1862,0.06302890799539639
+18,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",RP,90,0.0030465100534831763
+19,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",JJR,70,0.002369507819375804
+20,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",VBN,684,0.02315347640647214
+21,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",JJ,1490,0.050436666440999256
+22,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",MD,901,0.030498950646537133
+23,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",JJS,50,0.0016925055852684313
+24,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",IN,2768,0.09369710920046036
+25,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",WP$,5,0.00016925055852684315
+26,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",FW,24,0.0008124026809288471
+27,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",VBG,202,0.006837722564484463
+28,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",NNPS,4,0.0001354004468214745
+29,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",UH,118,0.003994313181233498
+30,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",DT,2218,0.07507954776250762
+31,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",VBD,524,0.01773745853361316
+32,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",NNP,3039,0.10287048947261526
+33,Book,"Congreve, William, 1670-1729","
+The Way of the World
+",PDT,15,0.0005077516755805294
+0,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",NNS,97,0.04050104384133612
+1,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",RBR,6,0.0025052192066805845
+2,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",WRB,21,0.008768267223382045
+3,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",TO,36,0.015031315240083507
+4,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",RB,180,0.07515657620041753
+5,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",CD,22,0.00918580375782881
+6,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",VBP,52,0.021711899791231733
+7,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",PRP$,59,0.024634655532359082
+8,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",POS,12,0.005010438413361169
+9,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",NN,309,0.1290187891440501
+10,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",PRP,190,0.07933194154488518
+11,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",EX,5,0.0020876826722338203
+12,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",WP,17,0.007098121085594989
+13,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",WDT,4,0.0016701461377870565
+14,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",CC,171,0.07139874739039666
+15,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",VBZ,74,0.030897703549060542
+16,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",VB,97,0.04050104384133612
+17,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",JJR,5,0.0020876826722338203
+18,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",RP,30,0.012526096033402923
+19,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",JJ,180,0.07515657620041753
+20,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",VBN,30,0.012526096033402923
+21,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",MD,30,0.012526096033402923
+22,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",JJS,1,0.0004175365344467641
+23,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",IN,178,0.07432150313152401
+24,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",FW,2,0.0008350730688935282
+25,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",NNPS,2,0.0008350730688935282
+26,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",VBG,21,0.008768267223382045
+27,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",UH,17,0.007098121085594989
+28,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",DT,205,0.08559498956158663
+29,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",VBD,157,0.06555323590814197
+30,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",NNP,182,0.07599164926931107
+31,Book,"Hoffmann, Heinrich, 1809-1894","
+Struwwelpeter: Merry Stories and Funny Pictures
+",PDT,3,0.0012526096033402922
+0,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",NNS,124,0.033005057226510516
+1,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",RBR,2,0.0005323396326856535
+2,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",WRB,18,0.004791056694170881
+3,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",TO,87,0.023156774021825925
+4,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",RB,220,0.05855735959542188
+5,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",CD,43,0.011445302102741549
+6,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",PRP$,87,0.023156774021825925
+7,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",VBP,51,0.013574660633484163
+8,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",NN,615,0.16369443705083844
+9,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",POS,26,0.006920415224913495
+10,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",PRP,209,0.055629491615650783
+11,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",EX,8,0.002129358530742614
+12,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",WP,29,0.0077189246739419745
+13,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",WDT,16,0.004258717061485228
+14,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",VBZ,42,0.011179132286398722
+15,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",CC,141,0.03752994410433857
+16,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",VB,135,0.03593292520628161
+17,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",JJR,8,0.002129358530742614
+18,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",RP,26,0.006920415224913495
+19,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",VBN,104,0.02768166089965398
+20,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",JJ,213,0.05669417088102209
+21,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",MD,45,0.011977641735427202
+22,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",JJS,12,0.0031940377961139207
+23,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",IN,428,0.11392068139472984
+24,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",WP$,1,0.00026616981634282674
+25,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",VBG,87,0.023156774021825925
+26,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",UH,5,0.0013308490817141336
+27,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",DT,384,0.10220920947564546
+28,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",VBD,306,0.08144796380090498
+29,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",NNP,283,0.07532605802501996
+30,Book,"Vonnegut, Kurt, 1922-2007","
+The Big Trip Up Yonder
+",PDT,2,0.0005323396326856535
+0,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",NNS,4032,0.045189635075764366
+1,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",RBR,128,0.0014345915897068053
+2,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",TO,1931,0.02164215906034251
+3,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",WRB,519,0.005816820586389312
+4,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",RB,5602,0.0627857975432619
+5,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",RBS,36,0.000403478884605039
+6,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",CD,487,0.005458172688962611
+7,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",VBP,2390,0.026786514839056755
+8,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",PRP$,2643,0.029622074778086614
+9,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",POS,1022,0.011454317224065274
+10,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",NN,13300,0.14906303236797275
+11,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",PRP,7434,0.08331838967094056
+12,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",EX,160,0.0017932394871335068
+13,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",WP,598,0.006702232583161482
+14,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",WDT,324,0.003631309961445351
+15,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",CC,4173,0.04676992737380077
+16,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",VBZ,1853,0.020767954810364923
+17,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",VB,3861,0.043273110373890436
+18,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",JJR,376,0.004214112794763741
+19,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",RP,623,0.006982426253026091
+20,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",JJ,6515,0.07301847036671748
+21,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",VBN,1595,0.017876356137362145
+22,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",MD,1258,0.014099345467587196
+23,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",JJS,221,0.002476912041603156
+24,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",IN,10760,0.12059535550972833
+25,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",WP$,12,0.00013449296153501301
+26,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",FW,29,0.0003250246570429481
+27,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",VBG,1198,0.01342688065991213
+28,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",NNPS,16,0.00017932394871335067
+29,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",UH,84,0.000941450730745091
+30,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",DT,7622,0.08542544606832242
+31,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",VBD,3748,0.042006634986102395
+32,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",NNP,4465,0.05004258943781942
+33,Book,"Browning, Elizabeth Barrett, 1806-1861","
+Aurora Leigh
+",PDT,209,0.002342419080068143
+0,Fanfiction,Suaine,The Hour of the Wolf,NNS,1807,0.03314744836188869
+1,Fanfiction,Suaine,The Hour of the Wolf,RBR,111,0.0020361741937850826
+2,Fanfiction,Suaine,The Hour of the Wolf,TO,1441,0.026433576695894634
+3,Fanfiction,Suaine,The Hour of the Wolf,WRB,358,0.006567120372748285
+4,Fanfiction,Suaine,The Hour of the Wolf,RB,4154,0.07620060901786697
+5,Fanfiction,Suaine,The Hour of the Wolf,RBS,11,0.0002017830282129361
+6,Fanfiction,Suaine,The Hour of the Wolf,CD,189,0.003466999302931357
+7,Fanfiction,Suaine,The Hour of the Wolf,PRP$,1575,0.02889166085776131
+8,Fanfiction,Suaine,The Hour of the Wolf,VBP,954,0.01750009171955828
+9,Fanfiction,Suaine,The Hour of the Wolf,POS,326,0.005980115199765198
+10,Fanfiction,Suaine,The Hour of the Wolf,NN,7398,0.1357082584290274
+11,Fanfiction,Suaine,The Hour of the Wolf,PRP,4897,0.08983013537806801
+12,Fanfiction,Suaine,The Hour of the Wolf,EX,165,0.003026745423194042
+13,Fanfiction,Suaine,The Hour of the Wolf,WP,275,0.005044575705323403
+14,Fanfiction,Suaine,The Hour of the Wolf,WDT,215,0.003943941005980115
+15,Fanfiction,Suaine,The Hour of the Wolf,CC,1923,0.035275342113952377
+16,Fanfiction,Suaine,The Hour of the Wolf,VBZ,575,0.010547749202039844
+17,Fanfiction,Suaine,The Hour of the Wolf,VB,2815,0.051638111310855925
+18,Fanfiction,Suaine,The Hour of the Wolf,RP,466,0.008548262831566204
+19,Fanfiction,Suaine,The Hour of the Wolf,JJR,194,0.0035587188612099642
+20,Fanfiction,Suaine,The Hour of the Wolf,VBN,1090,0.0199948637047364
+21,Fanfiction,Suaine,The Hour of the Wolf,JJ,3106,0.056976189602670875
+22,Fanfiction,Suaine,The Hour of the Wolf,MD,1178,0.021609127930439887
+23,Fanfiction,Suaine,The Hour of the Wolf,JJS,120,0.002201269398686576
+24,Fanfiction,Suaine,The Hour of the Wolf,IN,5867,0.10762372968411785
+25,Fanfiction,Suaine,The Hour of the Wolf,WP$,6,0.0001100634699343288
+26,Fanfiction,Suaine,The Hour of the Wolf,FW,3,5.50317349671644e-05
+27,Fanfiction,Suaine,The Hour of the Wolf,VBG,1407,0.025809883699600102
+28,Fanfiction,Suaine,The Hour of the Wolf,NNPS,9,0.00016509520490149318
+29,Fanfiction,Suaine,The Hour of the Wolf,UH,96,0.0017610155189492608
+30,Fanfiction,Suaine,The Hour of the Wolf,DT,4915,0.090160325787871
+31,Fanfiction,Suaine,The Hour of the Wolf,VBD,4471,0.08201562901273067
+32,Fanfiction,Suaine,The Hour of the Wolf,NNP,2333,0.04279634589279818
+33,Fanfiction,Suaine,The Hour of the Wolf,PDT,64,0.0011740103459661737
+0,Fanfiction,thewunderkind,"drop dead, gorgeous",NNS,4059,0.03266143633071816
+1,Fanfiction,thewunderkind,"drop dead, gorgeous",RBR,192,0.0015449607724803863
+2,Fanfiction,thewunderkind,"drop dead, gorgeous",TO,2834,0.0228042647354657
+3,Fanfiction,thewunderkind,"drop dead, gorgeous",WRB,879,0.0070730235365117685
+4,Fanfiction,thewunderkind,"drop dead, gorgeous",RB,9688,0.07795614564473949
+5,Fanfiction,thewunderkind,"drop dead, gorgeous",RBS,39,0.00031382015691007844
+6,Fanfiction,thewunderkind,"drop dead, gorgeous",CD,1210,0.009736471534902435
+7,Fanfiction,thewunderkind,"drop dead, gorgeous",VBP,3411,0.02744719372359686
+8,Fanfiction,thewunderkind,"drop dead, gorgeous",PRP$,2886,0.023222691611345804
+9,Fanfiction,thewunderkind,"drop dead, gorgeous",NN,16925,0.13618990142828405
+10,Fanfiction,thewunderkind,"drop dead, gorgeous",POS,1048,0.008432910883122108
+11,Fanfiction,thewunderkind,"drop dead, gorgeous",PRP,11164,0.08983303158318245
+12,Fanfiction,thewunderkind,"drop dead, gorgeous",EX,328,0.0026393079863206597
+13,Fanfiction,thewunderkind,"drop dead, gorgeous",LS,6,4.828002414001207e-05
+14,Fanfiction,thewunderkind,"drop dead, gorgeous",WP,780,0.006276403138201569
+15,Fanfiction,thewunderkind,"drop dead, gorgeous",SYM,27,0.00021726010863005432
+16,Fanfiction,thewunderkind,"drop dead, gorgeous",WDT,286,0.0023013478173405755
+17,Fanfiction,thewunderkind,"drop dead, gorgeous",VBZ,7616,0.06128344397505532
+18,Fanfiction,thewunderkind,"drop dead, gorgeous",CC,3010,0.024220478776906054
+19,Fanfiction,thewunderkind,"drop dead, gorgeous",VB,5344,0.04300140816737075
+20,Fanfiction,thewunderkind,"drop dead, gorgeous",RP,993,0.007990343995171997
+21,Fanfiction,thewunderkind,"drop dead, gorgeous",JJR,301,0.0024220478776906056
+22,Fanfiction,thewunderkind,"drop dead, gorgeous",JJ,7674,0.06175015087507544
+23,Fanfiction,thewunderkind,"drop dead, gorgeous",VBN,2043,0.016439348219674108
+24,Fanfiction,thewunderkind,"drop dead, gorgeous",MD,1481,0.011917119291892979
+25,Fanfiction,thewunderkind,"drop dead, gorgeous",JJS,194,0.0015610541138603902
+26,Fanfiction,thewunderkind,"drop dead, gorgeous",IN,12080,0.0972037819352243
+27,Fanfiction,thewunderkind,"drop dead, gorgeous",WP$,5,4.0233353450010056e-05
+28,Fanfiction,thewunderkind,"drop dead, gorgeous",FW,21,0.00016898008449004224
+29,Fanfiction,thewunderkind,"drop dead, gorgeous",VBG,3839,0.030891168778917722
+30,Fanfiction,thewunderkind,"drop dead, gorgeous",NNPS,10,8.046670690002011e-05
+31,Fanfiction,thewunderkind,"drop dead, gorgeous",UH,160,0.0012874673104003218
+32,Fanfiction,thewunderkind,"drop dead, gorgeous",DT,9952,0.08008046670690001
+33,Fanfiction,thewunderkind,"drop dead, gorgeous",VBD,3292,0.02648963991148662
+34,Fanfiction,thewunderkind,"drop dead, gorgeous",NNP,10396,0.08365318849326091
+35,Fanfiction,thewunderkind,"drop dead, gorgeous",PDT,102,0.0008207604103802052
+0,Fanfiction,wittyy_name,The Marks We Make,NNS,11581,0.042803972516160985
+1,Fanfiction,wittyy_name,The Marks We Make,RBR,401,0.001482116654777701
+2,Fanfiction,wittyy_name,The Marks We Make,WRB,1862,0.006882047908219649
+3,Fanfiction,wittyy_name,The Marks We Make,TO,7122,0.02632327884121393
+4,Fanfiction,wittyy_name,The Marks We Make,RB,19602,0.07245000166322318
+5,Fanfiction,wittyy_name,The Marks We Make,RBS,41,0.00015153811183512653
+6,Fanfiction,wittyy_name,The Marks We Make,CD,1105,0.0040841369165320685
+7,Fanfiction,wittyy_name,The Marks We Make,VBP,6597,0.024382851799422678
+8,Fanfiction,wittyy_name,The Marks We Make,PRP$,11104,0.041040955946762075
+9,Fanfiction,wittyy_name,The Marks We Make,NN,36094,0.1334052831360258
+10,Fanfiction,wittyy_name,The Marks We Make,POS,1861,0.006878351856711475
+11,Fanfiction,wittyy_name,The Marks We Make,PRP,27594,0.10198884531654834
+12,Fanfiction,wittyy_name,The Marks We Make,EX,502,0.0018554178571032567
+13,Fanfiction,wittyy_name,The Marks We Make,WP,1082,0.003999127731844071
+14,Fanfiction,wittyy_name,The Marks We Make,WDT,908,0.0033560147694218266
+15,Fanfiction,wittyy_name,The Marks We Make,VBZ,18037,0.06666568105293115
+16,Fanfiction,wittyy_name,The Marks We Make,CC,10291,0.03803606607061676
+17,Fanfiction,wittyy_name,The Marks We Make,VB,10864,0.04015390358480036
+18,Fanfiction,wittyy_name,The Marks We Make,JJR,678,0.0025059229225418487
+19,Fanfiction,wittyy_name,The Marks We Make,RP,3216,0.011886501650286999
+20,Fanfiction,wittyy_name,The Marks We Make,JJ,14351,0.05304203519380246
+21,Fanfiction,wittyy_name,The Marks We Make,VBN,4192,0.015493847922264645
+22,Fanfiction,wittyy_name,The Marks We Make,MD,2817,0.010411777098525645
+23,Fanfiction,wittyy_name,The Marks We Make,JJS,375,0.0013860193155651817
+24,Fanfiction,wittyy_name,The Marks We Make,IN,28957,0.10702656352218924
+25,Fanfiction,wittyy_name,The Marks We Make,FW,39,0.0001441460088187789
+26,Fanfiction,wittyy_name,The Marks We Make,VBG,9966,0.036834849330460266
+27,Fanfiction,wittyy_name,The Marks We Make,NNPS,31,0.00011457759675338836
+28,Fanfiction,wittyy_name,The Marks We Make,UH,533,0.001969995453856645
+29,Fanfiction,wittyy_name,The Marks We Make,DT,20116,0.07434977213842452
+30,Fanfiction,wittyy_name,The Marks We Make,VBD,5339,0.019733219002140014
+31,Fanfiction,wittyy_name,The Marks We Make,NNP,13095,0.048399794499536145
+32,Fanfiction,wittyy_name,The Marks We Make,PDT,206,0.0007613866106838064
+0,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,NNS,910,0.0314682896465869
+1,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,RBR,49,0.0016944463655854485
+2,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,TO,826,0.028563524448440417
+3,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,WRB,183,0.006328238467390552
+4,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,RB,2339,0.08088387855315028
+5,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,RBS,11,0.0003803859188048966
+6,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,CD,187,0.006466560619683242
+7,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,PRP$,767,0.026523272702123245
+8,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,VBP,620,0.0214399336053669
+9,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,NN,3907,0.13510616225188463
+10,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,POS,135,0.004668372639878277
+11,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,PRP,2568,0.08880282177190676
+12,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,EX,38,0.001314060446780552
+13,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,WP,168,0.005809530396292967
+14,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,WDT,75,0.0025935403554879313
+15,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,CC,916,0.03167577287502594
+16,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,VBZ,300,0.010374161421951725
+17,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,VB,1404,0.048551075454734076
+18,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,JJR,84,0.0029047651981464833
+19,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,RP,335,0.011584480254512761
+20,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,JJ,1440,0.04979597482536828
+21,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,VBN,436,0.015077114599903175
+22,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,MD,430,0.01486963137146414
+23,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,JJS,61,0.0021094128224635176
+24,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,IN,3069,0.10612767134656616
+25,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,WP$,1,3.458053807317242e-05
+26,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,FW,2,6.916107614634484e-05
+27,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,VBG,1014,0.03506466560619683
+28,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,NNPS,12,0.000414966456878069
+29,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,UH,56,0.0019365101320976555
+30,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,DT,2569,0.08883740230997994
+31,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,VBD,2278,0.07877446573068676
+32,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,NNP,1701,0.058821495262466286
+33,Fanfiction,MurdockSchmurdock,That Awkward Moment When Your Whole Class Shows Up At Your House,PDT,27,0.0009336745279756553
+0,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,NNS,2284,0.038446000538647995
+1,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,RBR,65,0.0010941287368704553
+2,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,TO,1563,0.026309587934284943
+3,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,WRB,549,0.009241179639105845
+4,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,RB,4525,0.07616819283598168
+5,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,RBS,20,0.00033665499596014
+6,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,CD,280,0.0047131699434419605
+7,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,VBP,1478,0.02487880420145435
+8,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,PRP$,1681,0.02829585241044977
+9,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,NN,7773,0.13084096417990843
+10,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,POS,459,0.007726232157285214
+11,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,PRP,5838,0.09826959332076488
+12,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,EX,130,0.0021882574737409105
+13,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,WP,397,0.00668260166980878
+14,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,WDT,243,0.004090358200915701
+15,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,VBZ,3708,0.062415836251009965
+16,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,CC,2128,0.035820091570158905
+17,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,VB,2458,0.04137489900350121
+18,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,RP,667,0.011227444115270671
+19,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,JJR,148,0.002491246970105036
+20,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,JJ,3197,0.053814301104228385
+21,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,VBN,821,0.01381968758416375
+22,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,MD,745,0.012540398599515216
+23,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,JJS,107,0.0018011042283867492
+24,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,IN,6880,0.11580931861028818
+25,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,WP$,10,0.00016832749798007
+26,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,FW,13,0.00021882574737409102
+27,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,VBG,1791,0.030147454888230542
+28,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,NNPS,19,0.00031982224616213304
+29,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,UH,208,0.0035012119579854563
+30,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,DT,5127,0.0863015082143819
+31,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,VBD,1187,0.01998047401023431
+32,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,NNP,2857,0.04809116617290601
+33,Fanfiction,antistar_e (kaikamahine),Kiss a Boy in Tokyo Town,PDT,52,0.0008753029894963641
+0,Fanfiction,BialyLis,I'd forgotten people are kind,NNS,3760,0.026483349298472982
+1,Fanfiction,BialyLis,I'd forgotten people are kind,RBR,435,0.0030638981236265285
+2,Fanfiction,BialyLis,I'd forgotten people are kind,TO,4363,0.03073054600777596
+3,Fanfiction,BialyLis,I'd forgotten people are kind,WRB,1035,0.00728996450104243
+4,Fanfiction,BialyLis,I'd forgotten people are kind,RB,14371,0.10122133318307319
+5,Fanfiction,BialyLis,I'd forgotten people are kind,RBS,49,0.0003451287541556319
+6,Fanfiction,BialyLis,I'd forgotten people are kind,CD,662,0.004662759903082211
+7,Fanfiction,BialyLis,I'd forgotten people are kind,PRP$,3656,0.02575083112638756
+8,Fanfiction,BialyLis,I'd forgotten people are kind,VBP,2343,0.016502789203809095
+9,Fanfiction,BialyLis,I'd forgotten people are kind,NN,17154,0.12082323773032062
+10,Fanfiction,BialyLis,I'd forgotten people are kind,POS,561,0.003951372062883868
+11,Fanfiction,BialyLis,I'd forgotten people are kind,PRP,15552,0.10953964050262016
+12,Fanfiction,BialyLis,I'd forgotten people are kind,EX,223,0.0015706880036062433
+13,Fanfiction,BialyLis,I'd forgotten people are kind,WP,557,0.0039231982870344285
+14,Fanfiction,BialyLis,I'd forgotten people are kind,SYM,1,7.043443962359835e-06
+15,Fanfiction,BialyLis,I'd forgotten people are kind,WDT,369,0.002599030822110779
+16,Fanfiction,BialyLis,I'd forgotten people are kind,CC,5474,0.03855581224995774
+17,Fanfiction,BialyLis,I'd forgotten people are kind,VBZ,1234,0.008691609849552038
+18,Fanfiction,BialyLis,I'd forgotten people are kind,VB,7948,0.05598129261283597
+19,Fanfiction,BialyLis,I'd forgotten people are kind,RP,956,0.006733532428016002
+20,Fanfiction,BialyLis,I'd forgotten people are kind,JJR,596,0.0041978926015664615
+21,Fanfiction,BialyLis,I'd forgotten people are kind,JJ,8054,0.05672789767284611
+22,Fanfiction,BialyLis,I'd forgotten people are kind,VBN,2149,0.015136361075111286
+23,Fanfiction,BialyLis,I'd forgotten people are kind,MD,2634,0.018552431396855806
+24,Fanfiction,BialyLis,I'd forgotten people are kind,JJS,341,0.002401814391164704
+25,Fanfiction,BialyLis,I'd forgotten people are kind,IN,15099,0.10634896038767115
+26,Fanfiction,BialyLis,I'd forgotten people are kind,WP$,7,4.930410773651885e-05
+27,Fanfiction,BialyLis,I'd forgotten people are kind,FW,13,9.156477151067786e-05
+28,Fanfiction,BialyLis,I'd forgotten people are kind,VBG,3467,0.02441962021750155
+29,Fanfiction,BialyLis,I'd forgotten people are kind,NNPS,5,3.521721981179918e-05
+30,Fanfiction,BialyLis,I'd forgotten people are kind,UH,216,0.0015213838958697244
+31,Fanfiction,BialyLis,I'd forgotten people are kind,DT,11676,0.08223925170451343
+32,Fanfiction,BialyLis,I'd forgotten people are kind,VBD,12390,0.08726827069363836
+33,Fanfiction,BialyLis,I'd forgotten people are kind,NNP,4468,0.03147010762382375
+34,Fanfiction,BialyLis,I'd forgotten people are kind,PDT,158,0.001112864146052854
+0,Fanfiction,karategal,An Unexpected Addition,NNS,4836,0.050735432971736716
+1,Fanfiction,karategal,An Unexpected Addition,RBR,163,0.0017100652552508445
+2,Fanfiction,karategal,An Unexpected Addition,TO,2316,0.024297614301600958
+3,Fanfiction,karategal,An Unexpected Addition,WRB,516,0.005413458108646845
+4,Fanfiction,karategal,An Unexpected Addition,RB,6534,0.06854948698042343
+5,Fanfiction,karategal,An Unexpected Addition,RBS,44,0.0004616127069388783
+6,Fanfiction,karategal,An Unexpected Addition,CD,441,0.004626618267273758
+7,Fanfiction,karategal,An Unexpected Addition,PRP$,2541,0.026658133825720222
+8,Fanfiction,karategal,An Unexpected Addition,VBP,2028,0.0212761493107283
+9,Fanfiction,karategal,An Unexpected Addition,NN,12218,0.12818145575861853
+10,Fanfiction,karategal,An Unexpected Addition,POS,1130,0.011855053610021192
+11,Fanfiction,karategal,An Unexpected Addition,PRP,6377,0.06690236891248243
+12,Fanfiction,karategal,An Unexpected Addition,EX,129,0.0013533645271617113
+13,Fanfiction,karategal,An Unexpected Addition,WP,360,0.0037768312385908225
+14,Fanfiction,karategal,An Unexpected Addition,WDT,306,0.003210306552802199
+15,Fanfiction,karategal,An Unexpected Addition,CC,3258,0.034180322709246945
+16,Fanfiction,karategal,An Unexpected Addition,VBZ,1240,0.013009085377368388
+17,Fanfiction,karategal,An Unexpected Addition,VB,3893,0.04084223336620575
+18,Fanfiction,karategal,An Unexpected Addition,RP,648,0.00679829622946348
+19,Fanfiction,karategal,An Unexpected Addition,JJR,380,0.0039866551962903125
+20,Fanfiction,karategal,An Unexpected Addition,JJ,6671,0.06998678109066493
+21,Fanfiction,karategal,An Unexpected Addition,VBN,2071,0.021727270819782204
+22,Fanfiction,karategal,An Unexpected Addition,MD,1546,0.016219391930170586
+23,Fanfiction,karategal,An Unexpected Addition,JJS,260,0.0027277114500933717
+24,Fanfiction,karategal,An Unexpected Addition,IN,11330,0.11886527203676116
+25,Fanfiction,karategal,An Unexpected Addition,FW,16,0.0001678591661595921
+26,Fanfiction,karategal,An Unexpected Addition,VBG,2320,0.024339579093140856
+27,Fanfiction,karategal,An Unexpected Addition,NNPS,13,0.00013638557250466858
+28,Fanfiction,karategal,An Unexpected Addition,UH,159,0.0016681004637109464
+29,Fanfiction,karategal,An Unexpected Addition,DT,9785,0.10265637130447554
+30,Fanfiction,karategal,An Unexpected Addition,VBD,5706,0.05986277513166453
+31,Fanfiction,karategal,An Unexpected Addition,NNP,6022,0.06317799366331647
+32,Fanfiction,karategal,An Unexpected Addition,PDT,61,0.0006399630709834449
+0,Fanfiction,mirrorkill,Fly a Little Faster,NNS,1308,0.03899239827097928
+1,Fanfiction,mirrorkill,Fly a Little Faster,RBR,45,0.001341481591891489
+2,Fanfiction,mirrorkill,Fly a Little Faster,TO,856,0.025517960947980325
+3,Fanfiction,mirrorkill,Fly a Little Faster,WRB,211,0.006290058130868982
+4,Fanfiction,mirrorkill,Fly a Little Faster,RB,2541,0.07574899388880608
+5,Fanfiction,mirrorkill,Fly a Little Faster,RBS,6,0.00017886421225219855
+6,Fanfiction,mirrorkill,Fly a Little Faster,CD,159,0.004739901624683261
+7,Fanfiction,mirrorkill,Fly a Little Faster,VBP,749,0.022328215829482783
+8,Fanfiction,mirrorkill,Fly a Little Faster,PRP$,914,0.027246981666418243
+9,Fanfiction,mirrorkill,Fly a Little Faster,NN,4299,0.12815620807870026
+10,Fanfiction,mirrorkill,Fly a Little Faster,POS,409,0.012192577135191533
+11,Fanfiction,mirrorkill,Fly a Little Faster,PRP,3101,0.09244298703234462
+12,Fanfiction,mirrorkill,Fly a Little Faster,EX,87,0.002593531077656879
+13,Fanfiction,mirrorkill,Fly a Little Faster,WP,153,0.004561037412431063
+14,Fanfiction,mirrorkill,Fly a Little Faster,WDT,129,0.0038455805634222684
+15,Fanfiction,mirrorkill,Fly a Little Faster,VBZ,2741,0.0817111342972127
+16,Fanfiction,mirrorkill,Fly a Little Faster,CC,1153,0.03437173945446415
+17,Fanfiction,mirrorkill,Fly a Little Faster,VB,1453,0.04331495006707408
+18,Fanfiction,mirrorkill,Fly a Little Faster,RP,313,0.009330749739156357
+19,Fanfiction,mirrorkill,Fly a Little Faster,JJR,89,0.002653152481740945
+20,Fanfiction,mirrorkill,Fly a Little Faster,VBN,371,0.011059770457594277
+21,Fanfiction,mirrorkill,Fly a Little Faster,JJ,1705,0.05082724698166642
+22,Fanfiction,mirrorkill,Fly a Little Faster,MD,495,0.01475629751080638
+23,Fanfiction,mirrorkill,Fly a Little Faster,JJS,69,0.002056938440900283
+24,Fanfiction,mirrorkill,Fly a Little Faster,IN,3312,0.09873304516321359
+25,Fanfiction,mirrorkill,Fly a Little Faster,WP$,1,2.981070204203309e-05
+26,Fanfiction,mirrorkill,Fly a Little Faster,FW,6,0.00017886421225219855
+27,Fanfiction,mirrorkill,Fly a Little Faster,VBG,914,0.027246981666418243
+28,Fanfiction,mirrorkill,Fly a Little Faster,NNPS,21,0.0006260247428826949
+29,Fanfiction,mirrorkill,Fly a Little Faster,UH,113,0.003368609330749739
+30,Fanfiction,mirrorkill,Fly a Little Faster,DT,2659,0.07926665672976599
+31,Fanfiction,mirrorkill,Fly a Little Faster,VBD,524,0.015620807870025339
+32,Fanfiction,mirrorkill,Fly a Little Faster,NNP,2616,0.07798479654195856
+33,Fanfiction,mirrorkill,Fly a Little Faster,PDT,23,0.0006856461469667611
+0,Fanfiction,blacklipscurse (bealeciphers),Blue,NNS,5604,0.028158540016883064
+1,Fanfiction,blacklipscurse (bealeciphers),Blue,RBR,306,0.0015375648189090325
+2,Fanfiction,blacklipscurse (bealeciphers),Blue,WRB,1149,0.005773405153354504
+3,Fanfiction,blacklipscurse (bealeciphers),Blue,TO,5672,0.02850022108775174
+4,Fanfiction,blacklipscurse (bealeciphers),Blue,RB,14063,0.07066266028862
+5,Fanfiction,blacklipscurse (bealeciphers),Blue,RBS,24,0.00012059331913012019
+6,Fanfiction,blacklipscurse (bealeciphers),Blue,CD,966,0.0048538810949873374
+7,Fanfiction,blacklipscurse (bealeciphers),Blue,PRP$,7468,0.03752462113598907
+8,Fanfiction,blacklipscurse (bealeciphers),Blue,VBP,2861,0.014375728584636411
+9,Fanfiction,blacklipscurse (bealeciphers),Blue,NN,27296,0.13715480162399002
+10,Fanfiction,blacklipscurse (bealeciphers),Blue,POS,2101,0.010556940145515939
+11,Fanfiction,blacklipscurse (bealeciphers),Blue,PRP,17537,0.0881185432327049
+12,Fanfiction,blacklipscurse (bealeciphers),Blue,EX,385,0.0019345178277123448
+13,Fanfiction,blacklipscurse (bealeciphers),Blue,WP,1027,0.00516038911444306
+14,Fanfiction,blacklipscurse (bealeciphers),Blue,SYM,3,1.5074164891265023e-05
+15,Fanfiction,blacklipscurse (bealeciphers),Blue,WDT,582,0.0029243879889054147
+16,Fanfiction,blacklipscurse (bealeciphers),Blue,CC,5918,0.02973630260883547
+17,Fanfiction,blacklipscurse (bealeciphers),Blue,VBZ,1675,0.008416408730956304
+18,Fanfiction,blacklipscurse (bealeciphers),Blue,VB,8120,0.040800739639023996
+19,Fanfiction,blacklipscurse (bealeciphers),Blue,RP,1857,0.00933090806769305
+20,Fanfiction,blacklipscurse (bealeciphers),Blue,JJR,532,0.0026731519073843308
+21,Fanfiction,blacklipscurse (bealeciphers),Blue,JJ,9125,0.04585058487759778
+22,Fanfiction,blacklipscurse (bealeciphers),Blue,VBN,3512,0.017646822366040923
+23,Fanfiction,blacklipscurse (bealeciphers),Blue,MD,2802,0.014079270008441532
+24,Fanfiction,blacklipscurse (bealeciphers),Blue,JJS,268,0.0013466253969530088
+25,Fanfiction,blacklipscurse (bealeciphers),Blue,IN,21214,0.10659444466776541
+26,Fanfiction,blacklipscurse (bealeciphers),Blue,WP$,6,3.0148329782530047e-05
+27,Fanfiction,blacklipscurse (bealeciphers),Blue,FW,35,0.00017586525706475862
+28,Fanfiction,blacklipscurse (bealeciphers),Blue,VBG,6834,0.034338947622301726
+29,Fanfiction,blacklipscurse (bealeciphers),Blue,NNPS,10,5.024721630421675e-05
+30,Fanfiction,blacklipscurse (bealeciphers),Blue,UH,344,0.001728504240865056
+31,Fanfiction,blacklipscurse (bealeciphers),Blue,DT,16833,0.08458113920488805
+32,Fanfiction,blacklipscurse (bealeciphers),Blue,VBD,19571,0.0983388270289826
+33,Fanfiction,blacklipscurse (bealeciphers),Blue,NNP,13187,0.06626100414037063
+34,Fanfiction,blacklipscurse (bealeciphers),Blue,PDT,129,0.000648189090324396
+0,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,NNS,4687,0.04185157735889491
+1,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,RBR,130,0.0011608075648936076
+2,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,TO,3541,0.031618612209909726
+3,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,WRB,889,0.00793813788608013
+4,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,RB,7607,0.06792510112419747
+5,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,RBS,33,0.0002946665357037619
+6,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,CD,635,0.005670098490057237
+7,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,VBP,2416,0.02157316212909966
+8,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,PRP$,3043,0.027171826307471135
+9,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,POS,596,0.005321856220589154
+10,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,NN,12656,0.11300908108687305
+11,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,PRP,9583,0.08556937611058031
+12,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,EX,328,0.002928806779116179
+13,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,WP,791,0.0070630675679295655
+14,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,WDT,266,0.0023751908635515355
+15,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,VBZ,4651,0.041530122956308986
+16,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,CC,4714,0.04209266816083435
+17,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,VB,5811,0.05188809815074426
+18,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,RP,776,0.006929128233518765
+19,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,JJR,315,0.002812726022626818
+20,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,JJ,5319,0.04749488798206999
+21,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,VBN,2311,0.020635586788224053
+22,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,MD,1876,0.01675134609031083
+23,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,JJS,140,0.0012501004545008082
+24,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,IN,11433,0.10208856068791242
+25,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,WP$,1,8.929288960720058e-06
+26,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,FW,15,0.00013393933441080086
+27,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,VBG,3146,0.0280915430704253
+28,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,NNPS,73,0.0006518380941325642
+29,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,UH,142,0.0012679590324222482
+30,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,DT,9913,0.08851604146761793
+31,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,VBD,5116,0.04568224232304382
+32,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,NNP,8919,0.0796403282406622
+33,Fanfiction,Ariel_Sojourner,Back From the Future: Episode VI The Clone Wars,PDT,119,0.001062585386325687
