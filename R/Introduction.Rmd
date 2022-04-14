@@ -1,7 +1,0 @@
----
-title: "Introduction"
-author: "Kyle Rodriguez, Mei Maddox, Thomas FitzGerald"
-date: "4/13/2022"
-output: html_document
----
-

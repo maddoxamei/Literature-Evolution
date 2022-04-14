@@ -1,0 +1,12 @@
+---
+title: "Introduction"
+author: "Kyle Rodriguez, Mei Maddox, Thomas FitzGerald"
+date: "4/13/2022"
+output: html_document
+---
+# Introduction
+The following is a comparison of classical literature and modern fanfiction based on structural elements of each, like word usage and sentence structure.  We drew both types of literature from internet sources, specifically [Gutenberg Archive](https://www.gutenberg.org/) for classics and [Archive of Our Own](https://archiveofourown.org/) for fanfiction.  
+
+To test our methods, we use a random sample of 10 classics and 10 fanfictions, and then performs several types of analysis on each.  Although we used a small sample for this test, our method is scalable for much larger inputs.
+
+This document will walk you through the process of how we acquired our data, what we did with it, and what we found.  

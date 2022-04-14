@@ -1,0 +1,70 @@
+---
+title: "Sentence Structure"
+author: "Thomas FitzGerald, Mei Maddox, Kyle Rodriguez"
+date: "4/13/2022"
+output: html_document
+---
+
+Another aspect we looked at was the number of unique sentence structures (SS) in each story.  As it turns out, there are MANY ways to put together a sentence in English, so in this case we used an (extra) simplified way of structuring a sentence: nouns (including pronouns), verbs, adjectives, and adverbs only, no punctuation.  Despite this, we still had stories with nearly (but not over) 9,000 unique sentence structures.
+
+```{r echo=FALSE}
+SS_simple_fic <- SS_simple %>% filter(count > 50,lit_type =='Fanfiction')
+SS_simple_book <- SS_simple %>% filter(count > 50,lit_type =='Classic Literature ')
+```
+
+```{r echo=FALSE,results='asis'}
+library(knitr)
+kable(SS_simple_fic[,2:3])
+```
+
+Above we see our raw output of numbers for sentence structure of the fan fictions. There are many types of structures so we decided to keep the count above 50 for each literary type.  With this restriction we have 23 different sentence structures for fan fictions.  
+
+
+```{r echo=FALSE,results='asis'}
+library(knitr)
+kable(SS_simple_book[,2:3])
+```
+
+For books we see that there are only 6 different structures used more than 50 times. We also checked to see if we were at just the cusp of where books start to use more structures and we found that not many more structures were used more than 30 times. It is reasonable to assume that books have a higher variety of sentence structures leading to lower counts.  
+
+```{r}
+df.lit.sent<-subset(df.ss_s,lit_type=="Book") %>%
+  select(title,SS_simple,count) %>%
+  group_by(title) %>%
+  summarise(count = sum(count)) %>%
+  arrange(desc(count))
+df.ff.sent<-subset(df.ss_s,lit_type=="Fanfiction") %>%
+  select(title,SS_simple,count) %>%
+  group_by(title) %>%
+  summarise(count = sum(count)) %>%
+  arrange(desc(count))
+
+df.lit.words<-subset(df.word,lit_type=="Book") %>%
+  select(title,POS_word,count) %>%
+  group_by(title) %>%
+  summarise(word_count = sum(count)) %>%
+  arrange(desc(word_count))
+df.ff.words<-subset(df.word,lit_type=="Fanfiction") %>%
+  select(title,POS_word,count) %>%
+  group_by(title) %>%
+  summarise(word_count = sum(count)) %>%
+  arrange(desc(word_count))
+
+df.lit<-cbind(df.lit.words,unique_sentences=df.lit.sent$count[match(df.lit.words$title,df.lit.sent$title)])
+df.ff<-cbind(df.ff.words,unique_sentences=df.ff.sent$count[match(df.ff.words$title,df.ff.sent$title)])
+df.lit$lit_type<-"Classic Literature"
+df.ff$lit_type<-"Fanfiction"
+df.scatter<-rbind(df.lit,df.ff)
+
+p<-ggplot(data=df.scatter, aes(x=word_count, y=unique_sentences,col=lit_type,group=lit_type)) + 
+  geom_point() +
+  geom_smooth(method=lm, aes(color=lit_type))+
+  labs(title="Unique Sentence Structure and Story Length",
+       x="Length (Word Count)", y = "Unique Sentence Structures")+
+  theme_classic()
+p<-p + scale_x_continuous(labels = scales::comma)
+p<-p + scale_y_continuous(labels = scales::comma)
+p <- p + guides(fill=guide_legend(title="Literature Type"))
+p
+```
+Intuitively, a longer story will have more unique SS in it, and this seems to pan out in our data.  However, the relationship between length and unique SS seems to be much stronger in fanfiction than in modern literature: in fact, our longest classic, Aurora Leigh, has a comparatively small number of SS (372), which falls much closer to Three Little Pigs (64) than to the next-longest classic, The Secret Garden (2,226).  It is worth considering that Aurora Leigh is written in verse, which may impact SS variety.

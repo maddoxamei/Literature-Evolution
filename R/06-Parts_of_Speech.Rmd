@@ -1,0 +1,93 @@
+---
+title: "Findings 2 - Parts of Speech"
+author: "Thomas FitzGerald, Mei Maddox, Kyle Rodriguez"
+date: "4/13/2022"
+output: html_document
+---
+#Part of Speech
+
+Next, we're going to look at parts of speech (POS).  The natural language processing method we used recognizes ~34 'parts of speech', with most of the 'extra' POS in the package being more specific applications of the main 8 English POS.  For example, 'big','bigger',and 'biggest' are all adjectives, but the package would categorize them as simple, comparative, and superlative adjectives.
+
+We're going to look at what proportion of the text of each story the 6 most common parts of speech make up.  These are singular nouns, pronouns,prepositions,determiners (the, a, that), simple adjectives, and simple adverbs.
+
+```{r, echo=FALSE}
+#Classic Lit: Top 5 POS
+df.lit.words<- subset(df.word,lit_type=="Book") %>%
+  select(title,POS_word,proportion)
+
+df.lit.words$title<-gsub("Ã¨","e",gsub("\n","",df.lit.words$title))
+
+df.lit.words.top5 <-subset(df.lit.words,POS_word %in% c('NN','IN','PRP','DT','JJ','RB')) %>%
+  arrange(POS_word,desc(proportion))
+
+df.lit.words.top5$proportion<-df.lit.words.top5$proportion*100
+
+#Box
+fig.class.nn <- plot_ly(x = subset(df.lit.words.top5,POS_word=='NN')$proportion, type = "box", quartilemethod="linear", name="Singular Nouns") %>%
+  add_trace(x = subset(df.lit.words.top5,POS_word=='IN')$proportion, type = "box", quartilemethod="linear", name="Preposition") %>%
+  add_trace(x = subset(df.lit.words.top5,POS_word=='PRP')$proportion, type = "box", quartilemethod="linear", name="Pronouns") %>%
+  add_trace(x = subset(df.lit.words.top5,POS_word=='DT')$proportion, type = "box", quartilemethod="linear", name="Determiners") %>%
+  add_trace(x = subset(df.lit.words.top5,POS_word=='JJ')$proportion, type = "box", quartilemethod="linear", name="Adjectives") %>%
+  add_trace(x = subset(df.lit.words.top5,POS_word=='RB')$proportion, type = "box", quartilemethod="linear", name="Adverb") %>%
+  layout(title = "Top 6 POS - Classic Literature",
+        yaxis = list(title="Part of Speech"),
+        xaxis = list(title="Percentage of Words in Text",range=c(0,25)),
+        legend= list(traceorder='reversed')
+        )
+        
+fig.class.nn
+#df.lit.words.top5
+```
+```{r, echo=FALSE}
+#Fanfiction: Top 5 POS
+df.lit.words<- subset(df.word,lit_type=="Fanfiction") %>%
+  select(title,POS_word,proportion)
+
+df.lit.words.top5 <-subset(df.lit.words,POS_word %in% c('NN','IN','PRP','DT','JJ','RB')) %>%
+  arrange(POS_word,desc(proportion))
+
+df.lit.words.top5$proportion<-df.lit.words.top5$proportion*100
+
+#Box
+fig.class.nn <- plot_ly(x = subset(df.lit.words.top5,POS_word=='NN')$proportion, type = "box", quartilemethod="linear", name="Singular Nouns") %>%
+  add_trace(x = subset(df.lit.words.top5,POS_word=='IN')$proportion, type = "box", quartilemethod="linear", name="Preposition") %>%
+  add_trace(x = subset(df.lit.words.top5,POS_word=='PRP')$proportion, type = "box", quartilemethod="linear", name="Pronouns") %>%
+  add_trace(x = subset(df.lit.words.top5,POS_word=='DT')$proportion, type = "box", quartilemethod="linear", name="Determiners") %>%
+  add_trace(x = subset(df.lit.words.top5,POS_word=='JJ')$proportion, type = "box", quartilemethod="linear", name="Adjectives") %>%
+  add_trace(x = subset(df.lit.words.top5,POS_word=='RB')$proportion, type = "box", quartilemethod="linear", name="Adverb") %>%
+  layout(title = "Top 6 POS - Fanfiction",
+        yaxis = list(title="Part of Speech"),
+        xaxis = list(title="Percentage of Words in Text",range=c(0,25)),
+        legend= list(traceorder='reversed')
+        )
+fig.class.nn
+#df.lit.words.top5
+```
+What really stands out here is, again, that there's a lot of variation in our classical literature that we're not seeing in our fanfiction sample.  However, every part of speech has at least one story from our sample that is a statistical outlier compared to the others.  Also noteworthy is the proportionally smaller number of singular nouns used in fanfiction.
+
+
+```{r echo = FALSE}
+POS_word_new <- POS_word %>% filter(POS_word == 'JJ'|POS_word == 'IN'|POS_word == 'NN'|POS_word == 'NNP'|POS_word == 'RB'|POS_word == 'VB'|POS_word == 'PRP') %>% mutate(POS_word=recode(POS_word,JJ='adjective',IN = 'preposition',NN= 'noun',NNP= 'proper_noun','RB'= 'adverb', VB = 'verb',PRP='pronoun'))
+```
+
+```{r echo = FALSE}
+p<-ggplot(data=POS_word_new,aes(x=POS_word , y=proportion,fill=lit_type))+
+  geom_bar(stat = 'identity',position = 'dodge') +theme_minimal()+scale_y_continuous(expand=expansion(mult=c(0,0.1)))+theme(axis.text.x = element_text(angle = 45, hjust=1))+labs(x='part of speech',y='proportion')
+p <- p + guides(fill=guide_legend(title="Literature Type"))
+p
+```
+As we discovered the parts of speech in comparison to the overall words, books had more of these major categories. It is interesting to note that books used more nouns and pronouns than fanfictions.  
+
+```{r echo = FALSE}
+books_words[is.na(books_words)]<-0
+wordcloud(words = books_words$X1 , freq = books_words$X2 , min.freq = 200,max.words=200, random.order=F, random.color = T, rot.per=0.35,colors=brewer.pal(8,'Dark2'))
+```
+
+We see here that books use more variety of pronouns the same amount of times.  
+
+```{r echo = FALSE}
+fanfic_words[is.na(fanfic_words)]<-0
+wordcloud(words = fanfic_words$X_1 , freq = fanfic_words$X_2 , min.freq = 200,max.words=200, random.order=F,random.color = T, rot.per=0.35,colors=brewer.pal(8,'Dark2'))
+```
+
+Where as the fan fictions tend to use he and his and him more.  
