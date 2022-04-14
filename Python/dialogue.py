@@ -42,7 +42,7 @@ def dialogue_stats( text ):
 	if stats == []:
 		return 0.0, 0.0, 0.0, 0.0
 	if len(stats) == 1:
-		return stats[0]
+		return stats[0][:-1]
 	info = reduce( lambda x, y: (x[0]+y[0], x[1]+y[1], x[2]+y[2], x[3]+y[3], x[4]+y[4]), stats )
 	return info[0]/info[3], info[1]/info[3], info[2]/info[3], info[3]/info[4]
 
