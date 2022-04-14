@@ -1,6 +1,9 @@
 from functools import reduce
 from re import search
 
+from dialogue import main
+import pandas
+
 
 def counter(object_, tracked_elements = None, elements_contain = '', flags = 0):
 	"""
@@ -52,3 +55,9 @@ def havok_method(list_of_dictionaries):
 			accumulator[key] = accumulator.get(key, 0) + value
 		return accumulator
 	return reduce(reducer, list_of_dictionaries, {})
+
+
+def conversion():
+	stats_books, stats_fanfiction = main()
+	pandas.DataFrame(stats_books, columns = ["min_con", "max_con", "avg_con", "var_con", "avg_dia", "avg_seg_dia", "avg_len_seg_dia", "prop_dia"]).to_csv("book_dialgue.csv", index = False)
+	pandas.DataFrame(stats_fanfiction, columns = ["min_con", "max_con", "avg_con", "var_con", "avg_dia", "avg_seg_dia", "avg_len_seg_dia", "prop_dia"]).to_csv("fanfic_dialgue.csv", index = False)
