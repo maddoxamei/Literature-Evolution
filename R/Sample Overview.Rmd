@@ -5,51 +5,57 @@ date: "4/13/2022"
 output: html_document
 ---
 
-Before we move on, let's take a brief look at what our test sample consists of, to provide context for later analysis.
-```{r,echo=FALSE} 
-dfList<-unique(df.punc %>%select(lit_type,title,author))
-dfList$title<-gsub("Ã¨","e",gsub("\n","",dfList$title))
+This section is a brief look at what our test sample consists of, to provide context for later analysis.
 
-dfList.class<-subset(dfList,lit_type=="Book")
-dfList.ff<-subset(dfList,lit_type=="Fanfiction")
+# Classic Literature
+```{r,echo=FALSE} 
+#dfList<-unique(df.punc %>% select(lit_type,title,author) %>% arrange(title))
+#dfList$title<-gsub("Ã¨","e",gsub("\n","",dfList$title))
+#dfList.class<-subset(dfList,lit_type=="Book")
+#dfList.ff<-subset(dfList,lit_type=="Fanfiction")
+
+dfList.ff<-df.sample_notes[1:10,]
+dfList.class<-df.sample_notes[11:20,]
 
 table.class <- plot_ly(
   type = 'table',
-  columnwidth = c(2, 1),
-  columnorder = c(0, 1),
+  columnwidth = c(150, 100,100),
+  columnorder = c(0, 1, 2),
   header = list(
-    values = c("Title","Author"),
-    align = c("left", "left"),
+    values = c("Title","Author","Notes"),
+    align = c("center", "center","center"),
     line = list(width = 1, color = 'black'),
     fill = list(color = c("grey", "grey")),
     font = list(family = "Arial", size = 14, color = "white")
   ),
   cells = list(
-    values = rbind(dfList.class$title, dfList.class$author),
-    align = c("left", "left"),
+    values = rbind(dfList.class$Title, dfList.class$Author,dfList.class$Notes),
+    align = c("left", "left","left"),
     line = list(color = "black", width = 1),
     font = list(family = "Arial", size = 12, color = c("black"))
   ))
+table.class
 
+```
+# Modern Fanfiction
+```{r,echo=FALSE} 
 table.ff <- plot_ly(
   type = 'table',
-  columnwidth = c(2, 1),
-  columnorder = c(0, 1),
+  columnwidth = c(150, 100,100),
+  columnorder = c(0, 1, 2),
   header = list(
-    values = c("Title","Author"),
-    align = c("left", "left"),
+    values = c("Title","Author","Fandom"),
+    align = c("center", "center","center"),
     line = list(width = 1, color = 'black'),
     fill = list(color = c("grey", "grey")),
     font = list(family = "Arial", size = 14, color = "white")
   ),
   cells = list(
-    values = rbind(dfList.ff$title, dfList.ff$author),
-    align = c("left", "left"),
+    values = rbind(dfList.ff$Title, dfList.ff$Author,dfList.ff$Notes),
+    align = c("left", "left","left"),
     line = list(color = "black", width = 1),
     font = list(family = "Arial", size = 12, color = c("black"))
   ))
-
-table.class
 table.ff
 ```
 
