@@ -1,0 +1,38 @@
+---
+title: "Setup"
+author: "Thomas FitzGerald, Mei Maddox, Kyle Rodriguez"
+date: "4/13/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(wordcloud)
+library(RColorBrewer)
+library(plotly)
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+library(data.table)
+
+#CSV imports
+strFolder<-'C:\\File\\Lit_Evo_results\\'
+df.word<-read.csv( paste(strFolder,'POS_word.csv',sep='') )
+df.word.summary<-read.csv( paste(strFolder,'POS_word_summary.csv',sep='') )
+df.punc<-read.csv( paste(strFolder,'POS_punctuation.csv',sep='') )
+df.pos<-read.csv( paste(strFolder,'POS_all.csv',sep='') )
+df.ss_s<-read.csv( paste(strFolder,'SS_simple.csv',sep='') )
+df.ss_c<-read.csv( paste(strFolder,'SS_complex.csv',sep='') )
+dlog <- read.csv( paste(strFolder,'fanfics.csv',sep='') )
+books_words <- read.csv( paste(strFolder,'1.csv',sep='') )
+fanfic_words <- read.csv( paste(strFolder,'2.csv',sep='') )
+
+#Duplicates for differences in variable names used
+POS_word <- df.word
+POS_punct <- df.punc
+SS_simple <- df.ss_s
+
+#For graph labelling
+POS_word_new$lit_type<-gsub("Book","Classic Literature",POS_word_new$lit_type)
+POS_punct$lit_type<-gsub("Book","Classic Literature",POS_punct$lit_type)
+SS_simple$lit_type<-gsub("Book","Classic Literature",SS_simple$lit_type)
+```
