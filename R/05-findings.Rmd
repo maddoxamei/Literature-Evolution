@@ -1,3 +1,8 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
 # Findings
 ## Word Frequencies
 ```{r}
@@ -78,6 +83,20 @@ p
 It's worth nothing that the method we used for tokenizing punctuation results in a lot of simplification: colons, semi-colons, and ellipses are all classified as ':'.  Exclamation marks and periods are considered the same.  Despite this, there's still a bit that can be gleaned from this graphic: classic literature has a higher proportion of commas and partial sentence breaks, which might point towards more compound sentences, and the hashtag only appears in our fanfiction sample.
 
 ## Dialogue
+```{r, fig.cap="Average length-to-segment ratio of a single-person dialogue sequence"}
+rbind(books_dialogue, fanfic_dialogue) %>%
+  plot_ly(x = ~avg_len_seg_dia, color = ~lit_type, type = "box") 
+```
+
+```{r, fig.cap="Average length of continuous conversation"}
+rbind(books_dialogue, fanfic_dialogue) %>%
+  plot_ly(x = ~avg_con, color = ~lit_type, type = "box") 
+```
+
+```{r, fig.cap="Variance of the length of continous conversation"}
+rbind(books_dialogue, fanfic_dialogue) %>%
+  plot_ly(x = ~var_con, color = ~lit_type, type = "box") 
+```
 
 ## Part of Speech
 

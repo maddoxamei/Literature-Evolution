@@ -35,6 +35,10 @@ df.sample_notes<-read.csv( './static/Sample_notes.csv' )
 dlog <- read.csv( './static/fanfics.csv' )
 books_words <- read.csv( './static/1.csv' )
 fanfic_words <- read.csv( './static/2.csv' )
+books_dialogue <- read.csv( './static/book_dialogue.csv' ) %>%
+  mutate(lit_type = "Classic Literature")
+fanfic_dialogue <- read.csv( './static/fanfic_dialogue.csv' ) %>%
+  mutate(lit_type = "Fan Fiction")
 
 #Duplicates for differences in variable names used
 POS_word <- df.word
