@@ -22,10 +22,13 @@ df.ff.words<-subset(df.word,lit_type=="Fanfiction") %>%
   summarise(word_count = sum(count)) %>%
   arrange(desc(word_count))
 
-ggplot(data=df.both.words,aes(x=lit_type,y=word_count,fill=lit_type)) +
-  geom_bar(stat="identity",position="dodge2")
+df.both.words$lit_type<-gsub("Book","Classic Literature",df.both.words$lit_type)
+p<-ggplot(data=df.both.words,aes(x=lit_type,y=word_count,fill=lit_type)) +
+  geom_bar(stat="identity",position="dodge2") +
   theme_minimal()+labs(x='Literature Type',y='Word Count')
-
+p <- p + guides(fill=guide_legend(title="Literature Type"))
+p
+  
 fig.word.count <- plot_ly(x = df.lit.words$word_count, type = "box", quartilemethod="linear", name="Classic Literature") %>%
   add_trace(x = df.ff.words$word_count, quartilemethod="linear", name="Modern Fanfiction") %>%
   layout(title = "Word Counts by Literature Type")
@@ -42,10 +45,12 @@ There are certainly examples outside our sample of one group far surpassing the 
 # Punctuation
 
 ```{r echo = FALSE}
-ggplot(data=POS_punct,aes(x=POS_punctuation , y=proportion,fill=lit_type))+
+p<-ggplot(data=POS_punct,aes(x=POS_punctuation , y=proportion,fill=lit_type))+
   geom_bar(stat = 'identity',position = 'dodge')+
   theme_minimal()+ scale_y_continuous(expand=expansion(mult=c(0,0.1)))+labs(x='part of speech',y='proportion')
+p <- p + guides(fill=guide_legend(title="Literature Type"))
+p
 ```
-Above we can see the punctuation used .
+Above we can see the punctuation used
 
 It's worth nothing that the method we used for tokenizing punctuation results in a lot of simplification: colons, semi-colons, and ellipses are all classified as ':'.  Exclamation marks and periods are considered the same.  Despite this, there's still a bit that can be gleaned from this graphic: classic literature has a higher proportion of commas, which might point towards more compound sentences, and the hashtag only appears in our fanfiction sample.

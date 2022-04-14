@@ -5,11 +5,11 @@ date: "4/13/2022"
 output: html_document
 ---
 
-Another metric we looked at was the number of unique sentence structures (SS) in each story.  As it turns out, there are MANY ways to put together a sentence in English, so in this case we used an (extra) simplified way of structuring a sentence: nouns (including pronouns), verbs, adjectives, and adverbs only, no punctuation.  Despite this, we still had stories with nearly (but not over) 9,000 unique sentence structures.
+Another aspect we looked at was the number of unique sentence structures (SS) in each story.  As it turns out, there are MANY ways to put together a sentence in English, so in this case we used an (extra) simplified way of structuring a sentence: nouns (including pronouns), verbs, adjectives, and adverbs only, no punctuation.  Despite this, we still had stories with nearly (but not over) 9,000 unique sentence structures.
 
 ```{r echo=FALSE}
 SS_simple_fic <- SS_simple %>% filter(count > 50,lit_type =='Fanfiction')
-SS_simple_book <- SS_simple %>% filter(count > 50,lit_type =='Book')
+SS_simple_book <- SS_simple %>% filter(count > 50,lit_type =='Classic Literature')
 ```
 
 ```{r echo=FALSE,results='asis'}

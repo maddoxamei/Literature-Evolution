@@ -30,7 +30,8 @@ fig.class.nn <- plot_ly(x = subset(df.lit.words.top5,POS_word=='NN')$proportion,
   add_trace(x = subset(df.lit.words.top5,POS_word=='RB')$proportion, type = "box", quartilemethod="linear", name="Adverb") %>%
   layout(title = "Top 6 POS - Classic Literature",
         yaxis = list(title="Part of Speech"),
-        xaxis = list(title="Percentage of Words in Text",range=c(0,25))
+        xaxis = list(title="Percentage of Words in Text",range=c(0,25)),
+        legend= list(traceorder='reversed')
         )
         
 fig.class.nn
@@ -55,7 +56,8 @@ fig.class.nn <- plot_ly(x = subset(df.lit.words.top5,POS_word=='NN')$proportion,
   add_trace(x = subset(df.lit.words.top5,POS_word=='RB')$proportion, type = "box", quartilemethod="linear", name="Adverb") %>%
   layout(title = "Top 6 POS - Fanfiction",
         yaxis = list(title="Part of Speech"),
-        xaxis = list(title="Percentage of Words in Text",range=c(0,25))
+        xaxis = list(title="Percentage of Words in Text",range=c(0,25)),
+        legend= list(traceorder='reversed')
         )
 fig.class.nn
 #df.lit.words.top5
@@ -68,18 +70,22 @@ POS_word_new <- POS_word %>% filter(POS_word == 'JJ'|POS_word == 'IN'|POS_word =
 ```
 
 ```{r echo = FALSE}
-ggplot(data=POS_word_new,aes(x=POS_word , y=count,fill=lit_type))+
+p<-ggplot(data=POS_word_new,aes(x=POS_word , y=count,fill=lit_type))+
   geom_bar(stat = 'identity',position = 'dodge')+
   theme_minimal()+scale_y_continuous(expand=expansion(mult=c(0,0.1)))+
   theme(axis.text.x = element_text(angle = 45, hjust=1))+labs(x='part of speech',y='count')
+p <- p + guides(fill=guide_legend(title="Literature Type"))
+p
 ```  
 
 From this graph we can see that fan fictions tend to have more of each part of speech in raw count. This also leads us to believe that maybe fan fictions have more words overall.  
 Below we will start to compare by proportion.  
 
 ```{r echo = FALSE}
-ggplot(data=POS_word_new,aes(x=POS_word , y=proportion,fill=lit_type))+
+p<-ggplot(data=POS_word_new,aes(x=POS_word , y=proportion,fill=lit_type))+
   geom_bar(stat = 'identity',position = 'dodge') +theme_minimal()+scale_y_continuous(expand=expansion(mult=c(0,0.1)))+theme(axis.text.x = element_text(angle = 45, hjust=1))+labs(x='part of speech',y='proportion')
+p <- p + guides(fill=guide_legend(title="Literature Type"))
+p
 ```
 As we discovered the parts of speech in comparison to the overall words, books had more of these major categories. It is interesting to note that books used more nouns and pronouns than fanfictions.  
 

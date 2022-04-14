@@ -4,18 +4,6 @@ author: "Thomas FitzGerald, Mei Maddox, Kyle Rodriguez"
 date: "4/13/2022"
 output: html_document
 ---
-```{r setup, include=FALSE}
-library(dplyr)
-library(ggplot2)
-library(plotly)
-library(reticulate)
-df.word<-read.csv('C:\\File\\Lit_Evo_results\\POS_word.csv')
-df.word.summary<-read.csv('C:\\File\\Lit_Evo_results\\POS_word_summary.csv')
-df.punc<-read.csv('C:\\File\\Lit_Evo_results\\POS_punctuation.csv')
-df.pos<-read.csv('C:\\File\\Lit_Evo_results\\POS_all.csv')
-df.ss_s<-read.csv('C:\\File\\Lit_Evo_results\\SS_simple.csv')
-df.ss_c<-read.csv('C:\\File\\Lit_Evo_results\\SS_complex.csv')
-```
 
 Before we move on, let's take a brief look at what our test sample consists of, to provide context for later analysis.
 ```{r,echo=FALSE} 
