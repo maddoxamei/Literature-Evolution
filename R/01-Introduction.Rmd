@@ -1,9 +1,51 @@
 ---
-title: "Introduction"
-author: "Kyle Rodriguez, Mei Maddox, Thomas FitzGerald"
-date: "4/13/2022"
-output: html_document
+title: "Literature Evolution"
+author: "Thomas FitzGerald, Mei Maddox, Kyle Rodriguez"
+output:
+  bookdown::pdf_book: default
+  bookdown::gitbook: default
+  bookdown::epub_book: default
+site: bookdown::bookdown_site
+documentclass: book
+nocite: '@*'
+github-repo: maddoxamei/Literature-Evolution
 ---
+
+```{r setup, include=FALSE}
+library(wordcloud)
+library(RColorBrewer)
+library(plotly)
+library(ggplot2)
+library(dplyr)
+library(tidyverse)
+library(data.table)
+library(knitr)
+
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+#CSV imports
+df.word<-read.csv( './static/POS_word.csv' )
+df.word.summary<-read.csv( './static/POS_word_summary.csv' )
+df.punc<-read.csv( './static/POS_punctuation.csv' )
+df.pos<-read.csv( './static/POS_all.csv' )
+df.ss_s<-read.csv( './static/SS_simple.csv' )
+# df.ss_c<-read.csv( './static/SS_complex.csv' )
+df.sample_notes<-read.csv( './static/Sample_notes.csv' )
+# dlog <- read.csv( './static/fanfics.csv' )
+# books_words <- read.csv( './static/1.csv' )
+# fanfic_words <- read.csv( './static/2.csv' )
+
+#Duplicates for differences in variable names used
+POS_word <- df.word
+POS_punct <- df.punc
+SS_simple <- df.ss_s
+
+#For graph labeling
+POS_word$lit_type<-gsub("Book","Classic Literature",POS_word$lit_type)
+POS_punct$lit_type<-gsub("Book","Classic Literature",POS_punct$lit_type)
+SS_simple$lit_type<-gsub("Book","Classic Literature",SS_simple$lit_type)
+```
+
 # Introduction
 The following is a comparison of classical literature and modern fanfiction based on structural elements of each, like word usage and sentence structure.  We drew both types of literature from internet sources, specifically [Gutenberg Archive](https://www.gutenberg.org/) for classics and [Archive of Our Own](https://archiveofourown.org/) for fanfiction.  
 

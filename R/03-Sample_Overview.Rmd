@@ -1,13 +1,8 @@
----
-title: "Sample Overview"
-author: "Thomas FitzGerald, Mei Maddox, Kyle Rodriguez"
-date: "4/13/2022"
-output: html_document
----
+# Corpus Overview
 
 This section is a brief look at what our test sample consists of, to provide context for later analysis.
 
-# Classic Literature
+## Classic Literature
 ```{r,echo=FALSE} 
 #dfList<-unique(df.punc %>% select(lit_type,title,author) %>% arrange(title))
 #dfList$title<-gsub("Ã¨","e",gsub("\n","",dfList$title))
@@ -37,7 +32,7 @@ table.class <- plot_ly(
 table.class
 
 ```
-# Modern Fanfiction
+## Modern Fanfiction
 ```{r,echo=FALSE} 
 table.ff <- plot_ly(
   type = 'table',

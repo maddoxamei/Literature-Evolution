@@ -1,10 +1,5 @@
----
-title: "Findings 2 - Parts of Speech"
-author: "Thomas FitzGerald, Mei Maddox, Kyle Rodriguez"
-date: "4/13/2022"
-output: html_document
----
-#Part of Speech
+# Findings 2 - Parts of Speech
+## Part of Speech
 
 Next, we're going to look at parts of speech (POS).  The natural language processing method we used recognizes ~34 'parts of speech', with most of the 'extra' POS in the package being more specific applications of the main 8 English POS.  For example, 'big','bigger',and 'biggest' are all adjectives, but the package would categorize them as simple, comparative, and superlative adjectives.
 

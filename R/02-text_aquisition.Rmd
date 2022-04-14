@@ -1,14 +1,6 @@
 # Developing A Corpus
 For the sake of simplicity, 10 examples of classic literature and 10 examples of modern fan-fiction were included in the corpus of texts on which to conduct our analysis, though infastructure allows for any given amount of each.
 
-```{r}
-corpus <- data.frame(
-Title = c("Sir Gawayne and the Green Knight", "Oedipus King of Thebes", "The Secret Garden", "The Story of the Three Little Pigs", "The Painted Veil", "The Extraordinary Adventures of Arsène Lupin, Gentleman-Burglar", "The Way of the World", "Struwwelpeter: Merry Stories and Funny Pictures", "The Big Trip Up Yonder", "Aurora Leigh"),
-logo = ""
-)
-```
-
-
 ## Text Aquisition
 The classic literature and modern fan-fiction texts were both sourced from online collections: Project Gutenberg and Archive of Our Own, respectively. 
 
@@ -17,7 +9,6 @@ Project Gutenberg is a collection of published digital works, written and otherw
 Archive of Our Own is a "fan-created, fan-run, nonprofit, noncommercial archive for transformative fanworks." There is no review board; registered users are allowed to write and upload whatever suits their inclinations.
 
 ```{r echo=FALSE}
-library(dplyr)
 data.frame(
 Count = c(10, 10),
 Source = "",
@@ -26,7 +17,7 @@ row.names = c("Classic Literature","Modern Fan Fiction")
   kableExtra::kbl(booktabs = T, align = "c") %>%
   kableExtra::kable_paper(full_width = F) %>%
   kableExtra::row_spec(1:2, bold = T) %>%
-  kableExtra::column_spec(2, image = kableExtra::spec_image( c("../static/project_gutenberg.png","../static/archive_of_our_own.png"), 200, 200))
+  kableExtra::column_spec(2, image = kableExtra::spec_image( c("./static/project_gutenberg.png","./static/archive_of_our_own.png"), 200, 200))
 ```
 
 Content and accompanying meta information (e.g. title) of each work was obtained via web scraping. Web scraping is an automatic technique which collects content on the Internet directly from the source (i.e. from the Project Gutenberg and Archive of Our Own website itself). This was done to ensure that the collection was current (works are constantly added, updated, and altered).
@@ -57,15 +48,15 @@ Features = c(
 ```
 
 ```{r label = valid_invalid_PG, fig.cap = "Example of (Left) valid, and therefore corpus includable Project Gutenberg work; (Right) invalid, and therefore corpus excluded Project Gutenberg work"}
-knitr::include_graphics("../static/valid_invalid_PG.png")
+knitr::include_graphics("./static/valid_invalid_PG.png")
 ```
 
 ```{r label = valid_AOO, fig.cap = "Example of a valid, and therefore corpus includable, Archive of Our Own work"}
-knitr::include_graphics("../static/valid_AOO.png")
+knitr::include_graphics("./static/valid_AOO.png")
 ```
 
 ```{r  label = invalid_AOO, fig.cap = "Example of an invalid, and therefore corpus excluded, Archive of Our Own work"}
-knitr::include_graphics("../static/invalid_AOO.png")
+knitr::include_graphics("./static/invalid_AOO.png")
 ```
 
 ## Text Preprocessing

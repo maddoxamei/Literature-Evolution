@@ -1,11 +1,5 @@
----
-title: "Findings 1 - Words and Punctuation"
-author: "Thomas FitzGerald, Mei Maddox, Kyle Rodriguez"
-date: "4/13/2022"
-output: html_document
----
-
-# Word Count
+# Findings - Words and Punctuation
+## Word Count
 ```{r}
 df.both.words<-df.word %>%
   group_by(lit_type,title) %>%
@@ -42,7 +36,7 @@ Although the extremes of our classic lit. sample are proportionally much more sp
 
 There are certainly examples outside our sample of one group far surpassing the other in either direction: War and Peace is nearly 600,000 words, while the entire genre colloquially known as "CrackFic" is premised around being under 100.
 
-# Punctuation
+## Punctuation
 
 ```{r echo = FALSE}
 p<-ggplot(data=POS_punct,aes(x=POS_punctuation , y=proportion,fill=lit_type))+
